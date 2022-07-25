@@ -1,204 +1,212 @@
-@extends('layouts.master')
-
+@extends('layouts.master2')
 @section('content')
-  <!--banner section-->
-    <section class="banner-inner-section py-2 py-md-5" style="background:linear-gradient(0deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.75)), url('./public/assets/images/data-banner.jpg')">
-        <div class="container h-100">
-         <div class="row align-items-center h-100">
-             <div class="col-md-6 mx-auto">
-                 <div class="banner-text  text-center text-white">
-                     <h1 class="hero__title fw-bold">Data that’s trusted by over 800,000 salespeople</h1>
-                     <p class="hero__subtitle">When you want accurate and compliant prospect and company data, Lusha sales intelligence stands a cut above its competition.</p>
-                    <div class="banner-email mt-4">
-                    @if(Auth::user())
-                      <div class="my-account-btn">
-                        <a href="{{url('/dashboard')}}"><button class="btn account-btn py-3">My Account</button></a>
-                      </div> 
-                    @else
-                     <div class="d-flex position-relative">
-                        <input class="form-control me-2 py-3" type="search" placeholder="Enter your work email" aria-label="Search">
-                        <a href="{{url('/register')}}"><button class="btn submit-btn py-3">Start up for free</button></a>
-                      </div>
-                    @endif 
-                 </div>
-                 </div>
-             </div>
-         </div>
-        </div>
-    </section>
-    
-    <!--number section-->
-     <section class="number-counter-section block-space block-space-bottom gray-bg">
-       <div class="container">
-          <div class="row">
-              <div class="col-lg-8 col-md-10 col-12 mx-auto">
-                 <div class="main-title text-center">
-                     <h2 class="main-title-text fw-bold"> Lusha’s company contact database lets you find decision makers, fast </h2>
-                 </div>
-             </div> 
-          </div>
-          <div class="row pt-5">
-              <div class="col-lg-3 col-md-6 col-12">
-                  <div class="number-count-content card p-4 mb-5 mb-lg-0 heigth-lg-100">
-                      <div class="connect-icon d-flex align-items-center justify-content-center"> <i class="fa fa-user" aria-hidden="true"></i> </div>
-                      <h2 class="fw-bold pt-3"> 100M </h2>
-                      <h6> Business profiles </h6>
-                      <p class="mb-0 mt-3">  Lusha has over 100M business profiles (contacts) in its database - a number that’s growing every day. Our contact database is global, highly accurate, and ranges from B2B enterprise to one-man-shows. </p>
+<!--banner section-->
+<section class="banner_section_main our_data_banner">
+   <div class="container-fluid">
+      <div class="row align-items-center">
+         <div class="col-md-6">
+            <div class="banner_text  text-center text-md-start">
+               <h1 class="hero__title fw-bold">Trusted Data<br> By Millions</h1>
+               <img src="{{url('public/assets/images/Usability-testing-pana.png')}}" alt="Image"/ class="img-fluid">
+               <p class="hero__subtitle">It comes with most accurate data and compliant prospect and business data, sales intelligence is a step above the competition.</p>
+               <div class="banner-email mt-4">
+                  @if(Auth::user())
+                  <div class="my-account-btn">
+                     <a href="{{url('/dashboard')}}"><button class="btn account_btn py-3">Get Started </button></a>
                   </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-12">
-                  <div class="number-count-content card p-4 mb-5 mb-lg-0 heigth-lg-100">
-                      <div class="connect-icon d-flex align-items-center justify-content-center"><i class="fa fa-envelope-o" aria-hidden="true"></i> </div>
-                      <h2 class="fw-bold pt-3"> 60M </h2>
-                      <h6> Decision makers email addresses </h6>
-                      <p class="mb-0 mt-3">  Our database provides over 60M decision maker email addresses from your most sought-after prospects. Keep your CRM up-to-date and send prospects sales outreach emails with Lusha’s accurate email addresses. </p>
-                  </div>
-              </div>
-             <div class="col-lg-3 col-md-6 col-12">
-                  <div class="number-count-content card p-4  mb-5 mb-lg-0 heigth-lg-100">
-                      <div class="connect-icon d-flex align-items-center justify-content-center"> <i class="fa fa-phone" aria-hidden="true"></i> </div>
-                      <h2 class="fw-bold pt-3"> 50M </h2>
-                      <h6> Decision makers direct dials </h6>
-                      <p class="mb-0 mt-3"> With over 50 million direct dials for B2B decision makers, Lusha lets you reach your most unreachable prospect. Avoid prospects ghosting you on social media networks. Lusha lets you connect with prospects, no matter where they’re working from.</p>
-                  </div>
-              </div>
-            <div class="col-lg-3 col-md-6 col-12">
-                  <div class="number-count-content card p-4  mb-5 mb-lg-0 heigth-lg-100">
-                      <div class="connect-icon d-flex align-items-center justify-content-center"> <i class="fa fa-building-o" aria-hidden="true"></i> </div>
-                      <h2 class="fw-bold pt-3"> 15M </h2>
-                      <h6> Full companies profiles </h6>
-                      <p class="mb-0 mt-3"> It doesn’t matter if you know the company you’d like to outreach to, or if you haven’t yet discovered them. Lusha has over 15 million full company profiles, to help you find your future customers and connect with accurate data. </p>
-                  </div>
-              </div>
-          </div>
-       </div>
-   </section>
-    
-   <!--image text section-->
-   <section class="image-text-section py-4 py-md-5 ">
-       <div class="container">
-          <div class="row align-items-center">
-            <!--1-->
-              <div class="col-md-6">
-                 <div class="sales-team-image">
-                      <img src="{{url('public/assets/images/data-2.jpg')}}" alt="Image"/ class="img-fluid">
-                 </div>
-              </div>
-              <div class="col-md-6">
-                 <div class="sales-team-text">
-                    <h2 class="fw-bold">Here’s why you’ll love our data </h2> 
-                    <p> <strong> Lusha’s data Is unique </strong> </p>
-                    <p> Lusha acquires its data from a variety of sources, including public databases, government data sources, social media feeds, Lusha’s data algorithm and the Lusha Community.</p>
-                 </div>
-              </div>
-             <!--2-->
-              
-              <div class="col-md-6">
-                 <div class="sales-team-text">
-                    <h2 class="fw-bold">Over 81% accuracy rates</h2> 
-                    <p> While industry standards are roughly between 60-70%, Lusha provides a striking 81% data accuracy rate, to ensure highly accurate outreach. Test drive Lusha’s data for yourself, with 5 free credits every month (no credit card required.)</p>
-                 </div>
-              </div>
-              <div class="col-md-6">
-                 <div class="sales-team-image">
-                     <img src="{{url('public/assets/images/data-1.jpg')}}" alt="Image"/ class="img-fluid">
-                 </div>
-              </div>
-          </div>
-       </div>
-   </section>
-   
-   <!--ccpa-gdpr section-->
-   
-   <section class="ccpa-gdpr-section block-space block-space-bottom">
-    <div class="container">
-     <div class="row align-items-center">
-         <div class="col-md-4 col-sm-3 col-12">
-             <div class="img-blk text-md-end text-center">
-                 <img src="{{url('public/assets/images/gdpr.png')}}" alt="Image"/ class="img-fluid">
-             </div>
-         </div>
-         <div class="col-md-4 col-sm-6 col-12">
-             <div class="main-title text-center text-white">
-                     <h1 class="main-title-text fw-bold pb-3 pb-md-4 pt-3 mb-0"> GDPR Aligned and CCPA Compliant </h1>
-                     <p class="px-3 px-md-0"> Lusha’s data leads industry standards, and is ISO 27001 certified, CCPA compliant and GDPR aligned. Ensure you’re prospecting with total peace of mind.</p>
-                 </div>
-         </div>
-           <div class="col-md-4 col-sm-3 col-12">
-             <div class="img-blk text-center text-md-start">
-                <img src="{{url('public/assets/images/ccpa.png')}}" alt="Image"/ class="img-fluid">
-             </div>
-         </div>
-     </div>
-    </div>
- </section>
-   
-<!--who section-->
-   <section class="who-section pt-5 gray-bg">
-       <div class="container">
-          <div class="row align-items-center">
-            <!--1-->
-              
-              <div class="col-md-6">
-                 <div class="sales-team-text">
-                    <h2 class="fw-bold">Third-party validated </h2> 
-                    <p> Our database has an added layer of accuracy, our community of voluntary contributors who validate its accuracy and submit new data. Additionally Lusha’s thumbs up and thumbs down allows us to perform checks-and-balances, ensuring our data stays highly accurate and relevant. </p>
-                    
-                 </div>
-              </div>
-              <div class="col-md-6">
-                 <div class="sales-team-image">
-                     <img src="{{url('public/assets/images/hiimlusha.png')}}" alt="Image"/ class="img-fluid">
-                 </div>
-              </div>
-          </div>
-       </div>
-   </section>
-   
-   
-   <!--tab section-->
-    <section class="tab-section  py-4 py-md-5 ">
-        <div class="container">
-            <div class="row">
-               <div class="col-md-8 mx-auto">
-                 <div class="sales-team-text text-center">
-                    <h2 class="fw-bold pb-2">Here's a list of the data we provide (data attributes). </h2> 
-                 </div>
-              </div>
-           </div>
-           <div class="row">
-               <div class="col-md-8 mx-auto">
-                   <div class="tab-content-info">
-                      <div id="exTab1" class="">	
-                    <ul  class="nav nav-pills py-4 justify-content-center">
-                    			<li class="active">
-                            <a  href="#1a" data-toggle="tab">Contact Attributes</a>
-                    			</li>
-                    			<li><a href="#2a" data-toggle="tab">Company Attributes</a>
-                    			</li>
-                    		</ul>
-
-			<div class="tab-content clearfix bg-white">
-			  <div class="tab-pane active" id="1a">
-                <table class="w-100 shadow">
-                    <tbody><tr class="tab-heading bg-clr">
-                        <th>Contact Attributes</th>
-                        <th>Description</th>
-                        </tr><tr>
-                            <td>Full name</td><td>Full name of contact</td></tr><tr><td>First name</td><td>First name of contact</td></tr><tr><td>Last name</td><td>Last name of contact</td></tr><tr><td>Middle name</td><td>Middle name of contact</td></tr><tr><td>Organization name</td><td>Employer name of contact</td></tr><tr><td>Job title</td><td>Contact’s title at given company</td></tr><tr><td>Seniority</td><td>Contact’s seniority at given company</td></tr><tr><td>Role</td><td>Standardized role based on job title</td></tr><tr><td>Emails</td><td>List of contact’s accurate emails</td></tr><tr><td>Phones</td><td>List of contact’s accurate phone numbers</td></tr><tr><td>Country</td><td>Contact’s current country values</td></tr><tr><td>State</td><td>Contact’s current state values</td></tr></tbody></table>
-				</div>
-				<div class="tab-pane" id="2a">
-                       <table class="w-100"><tbody><tr class="tab-heading bg-clr"><th>Company Attributes</th><th>Description</th></tr><tr><td>Name</td><td>Company name</td></tr><tr><td>Description</td><td>Description of company</td></tr><tr><td>Domain</td><td>Company’s website domain</td></tr><tr><td>Homepage URL</td><td>Company’s website URL value</td></tr><tr><td>Founded year</td><td>Year company was founded in</td></tr><tr><td>Logo URL</td><td>Link to company’s logo file</td></tr><tr><td>Facebook link</td><td>Link to company’s Facebook page</td></tr><tr><td>Twitter link</td><td>Link to company’s Twitter page</td></tr><tr><td>LinkedIn link</td><td>Link to company’s LinkedIn page</td></tr><tr><td>Company Location</td><td>Company’s headquarters address</td></tr><tr><td>Country</td><td>Company’s headquarters country</td></tr><tr><td>Country code</td><td>Company’s headquarters country code</td></tr><tr><td>State</td><td>Company’s headquarters state</td></tr><tr><td>State code</td><td>Company’s headquarters state code</td></tr><tr><td>Region</td><td>Company’s headquarters region</td></tr><tr><td>City</td><td>Company’s headquarters city</td></tr><tr><td>Street</td><td>Company’s headquarters street</td></tr><tr><td>Zip code</td><td>Company’s headquarters zip code</td></tr><tr><td>Company contact phone</td><td>Official ‘Contact Us’ phone number</td></tr><tr><td>Industry tags</td><td>List of company’s vertical descriptors</td></tr><tr><td>Industry category groups</td><td>List of the company’s industry groups</td></tr><tr><td>Industry primary group</td><td>Primary industry group from categories</td></tr><tr><td>Company Number of Employees</td><td>Bucketed employee ranges for company</td></tr><tr><td>Company Revenue Range</td><td>Bucketed Revenue ranges for company</td></tr><tr><td>Company Key People List</td><td>Bucketed Revenue ranges for company</td></tr></tbody></table>
-				</div>
-        
-         
-			</div>
-  </div> 
-                   </div>
+                  @else 
+                  <a href="{{url('/register')}}"><button class="btn py-3 get_start">Get Started</button></a>
+                  @endif 
                </div>
-           </div>
-        </div>
-    </section>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="banner-img">
+               <img src="{{url('public/assets/images/Usability-testing-pana.png')}}" alt="Image"/ class="img-fluid">
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!--number counter section-->
+<section class="number_counter_section our_data_counter block-space block-space-bottom">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="main_title text-center">
+               <h1 class="main-title-text fw-bold pb-4"> Our Progress & Report</h1>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6 col-sm-6">
+            <div class="counter-box number_count_content text-center">
+               <i class="fa fa-briefcase" aria-hidden="true"></i>
+               <div class="our_data_counter_inner">
+                  <h2 class="fw-bold pt-3 counter">120</h2>
+                  <span>M</span>
+               </div>
+               <p> Business Profiles </p>
+            </div>
+         </div>
+         <div class="col-md-6 col-sm-6">
+            <div class="counter-box number_count_content text-center">
+               <i class="fa fa-building-o" aria-hidden="true"></i>
+               <div class="our_data_counter_inner">
+                  <h2 class="fw-bold pt-3 counter">120</h2>
+                  <span>M</span>
+               </div>
+               <p> Decision Makers Email Addresses </p>
+            </div>
+         </div>
+         <div class="col-md-6 col-sm-6">
+            <div class="counter-box number_count_content text-center">
+               <i class="fa fa-meetup" aria-hidden="true"></i>
+               <div class="our_data_counter_inner">
+                  <h2 class="fw-bold pt-3 counter">120</h2>
+                  <span>M</span>
+               </div>
+               <p> Decision Makers Direct Dials </p>
+            </div>
+         </div>
+         <div class="col-md-6 col-sm-6">
+            <div class="counter-box number_count_content text-center">
+               <i class="fa fa-building" aria-hidden="true"></i>
+               <div class="our_data_counter_inner">
+                  <h2 class="fw-bold pt-3 counter">120</h2>
+                  <span>M</span>
+               </div>
+               <p> Full Companies Profiles </p>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!--services section-->
+<section class="services_main our_data_service">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-6">
+            <div class="services_left">
+               <img src="{{url('public/assets/images/Usability-testing-pana.png')}}" alt="Image"/ class="img-fluid">
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="services_right">
+               <h2>Our Unique Data</h2>
+               <p>Our Unique Data Comes From A Number Of Sources, Including Public Databases, Government Data, And Social Media Feeds.</p>
+            </div>
+         </div>
+      </div>
+      <div class="row services_right_main">
+         <div class="col-md-6 services_right_inner">
+            <div class="services_right">
+               <h2>Over 81% <br>Accuracy Rates</h2>
+               <p>While Industry Standards Average Between 60% And 70%, It Gives A Startling 81% Data Accuracy Rate To Ensure Highly Accurate Outreach. Check Out Its Data For Yourself With 5 Free Credits Per Month.</p>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="services_left">
+               <img src="{{url('public/assets/images/Onboarding-amico.png')}}" alt="Image"/ class="img-fluid">
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
+            <div class="services_left">
+               <img src="{{url('public/assets/images/Vault-rafiki.png')}}" alt="Image"/ class="img-fluid">
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="services_right">
+               <h2>GDPR Aligned And CCPA Compliant</h2>
+               <p>GDPR Aligned And CCPIt's Data Meets Industry Standards And Is ISO 27001 Certified, CCPA Legal, And GDPR Aligned. Make Sure You're Prospecting With Complete Confidence. </p>
+            </div>
+         </div>
+      </div>
+      <div class="row services_right_main">
+         <div class="col-md-6 services_right_inner">
+            <div class="services_right">
+               <h2>Third-Party Validated</h2>
+               <p>Our Database Has An Extra Degree Of Accuracy Due To Our Network Of Volunteer Contributors Who Evaluate Its Accuracy And Provide Fresh Data. Furthermore, The Thumbs Up And Thumbs Down Functionality Allows Us To Undertake Safeguards, Verifying That Our Data Is Very Accurate And Relevant.</p>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="services_left">
+               <img src="{{url('public/assets/images/Security-On-rafiki.png')}}" alt="Image"/ class="img-fluid">
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!--data list offer section-->
+<section class="data_list_offer">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="main_title text-center">
+               <h1 class="main-title-text fw-bold pb-4"> Here is a list of the data that we offer.</h1>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6">
+            <div class="attribute attribute1">
+               <h3>Contact Attributes</h3>
+               <p>List Of Contact Attributes</p>
+               <ul>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> Full name:</b> Full name of contact</span></li>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> First name:</b>  First name of contact</span></li>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> Last name:</b> Last name of contact</span></li>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> Last name:</b> Last name of contact</span></li>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> Organization name:</b> Employer name of contact</span></li>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> Job title:</b> Contact’s title at given company</span></li>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> Seniority:</b> Contact’s seniority at given company</span></li>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> Role:</b> Standardized role based on job title</span></li>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> Emails:</b> List of contact’s accurate emailst</span></li>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> Phones:</b> List of contact’s accurate phone numbers</span></li>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> State:</b> Contact’s current state values</span></li>
+               </ul>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="attribute">
+               <h3>Company Attributes</h3>
+               <p>List Of Company Attributes</p>
+               <ul>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> Name:</b> Company name</span></li>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> Description:</b>   Description of company</span></li>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> Domain:</b> Company’s website domaint</span></li>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> Homepage URL:</b> Company’s website URL valuett</span></li>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> Founded year:</b> Year company was founded in</span></li>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> Logo URL:</b> Link to company’s logo file</span></li>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> Facebook link:</b> Link to company’s Facebook page</span></li>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> Twitter link:</b> Link to company’s Twitter page</span></li>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> LinkedIn link:</b>  Link to company’s LinkedIn page</span></li>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> Company Location:</b>  Company’s headquarters address</span></li>
+                  <li><i class="fa fa-plus" aria-hidden="true"></i><span><b> Country:</b> Company’s headquarters country</span></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+   $(document).ready(function() {
    
-
+   $('.counter').each(function () {
+   $(this).prop('Counter',0).animate({
+   Counter: $(this).text()
+   }, {
+   duration: 4000,
+   easing: 'swing',
+   step: function (now) {
+   $(this).text(Math.ceil(now));
+   }
+   });
+   });
+   
+   });
+</script>
 @endsection

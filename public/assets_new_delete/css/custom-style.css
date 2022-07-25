@@ -1,0 +1,443 @@
+* {box-sizing: border-box;
+}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.payment_loding {
+  display: none;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(204, 79, 79, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+p {
+  line-height: 28px;
+}
+
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+
+.header .navbar a {
+  color: #071c4d;
+}
+.error {
+  color: red;
+}
+.unsuccess-msg {
+  color: red;
+}
+.success-msg{
+  color: green;
+}
+.stripe-error{
+  color: red;
+}
+.bg-clr{
+   background-color: #fff; 
+}
+.hero__title{
+    font-size: 48px;
+}
+.register-btn {
+    color: #000;
+}
+
+.logo-block img {
+    max-width: 130px;
+}
+.navbar .navbar-nav .nav-item a {
+    padding: 4px 22px;
+    font-size:15px;
+}
+.navbar .navbar-nav .nav-item .dropdown-menu a {
+    color: #000;
+    font-size: 15px;
+}
+.navbar .navbar-nav .nav-item .dropdown-menu a .sub {
+    font-size: 13px;
+    color: #05416c;
+}
+.banner-email{
+    width: 70%;
+}
+
+.block-space {
+    padding-top: 80px;
+}
+.block-space-bottom{
+     padding-bottom: 80px;
+}
+.item-icon {
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #F4423817;
+    margin:0 auto;
+}
+.item-icon i {
+    line-height: 80px;
+    font-size: 35px;
+    color: #FF023E;
+}
+.started-content{
+    border-radius: 15px;
+}
+.bg-img{
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+.email-send-blk {
+    width: 60%;
+    margin: 0 auto;
+}
+.btn.submit-btn {
+    border: 1px solid #fff;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    background: #FF023E;
+}
+.footer-content li{
+    padding-bottom:5px;
+}
+.footer-content a{
+    color:var(--bs-body-color);
+    text-decoration: none;
+    font-size: 15px;
+}
+.footer-content a:hover{
+    color:#FF023E;
+}
+.side-content {
+  border-right: 1px solid #dee2e6;
+}
+.social-icon li i {
+    padding: 0 15px;
+    color:#fff;
+}
+.copyright-footer {
+    background: #1157d7;
+}
+.copyright-footer p {
+    font-size: 13px;
+}
+.navbar-toggler-icon i {
+    color: #fff;
+}
+.navbar-toggler:focus {
+    box-shadow: unset;
+}
+.btn.main-btn {
+    background: #FF023E;
+    color: #fff;
+    padding: 10px 30px;
+}
+/*.shadow {*/
+/*    box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.2) !important;*/
+/*}*/
+.ccpa-gdpr-section{
+    padding-bottom: 100px;
+    background: #226cf3;
+}
+.form-select:focus {
+    box-shadow: unset;
+}
+.gray-bg{
+    background:#F6F6F6;
+}
+.blog-articles-listItem__meta li {
+  font-size: 14px;
+  color: #8b8b8b;
+}
+.blog-articles-listItem__meta li:not(:last-child)::after{
+  content: "|";
+  display: inline-block;
+  margin: 0 .25em;
+}
+.blog-profile-image{
+  width: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-right: 15px;
+}
+.admin-profile-image{
+   width: 60px; 
+   margin-right: 15px;
+}
+.blog-profile-text p , .admin-profile-text p {
+  font-size: 13px;
+}
+.imgae-dark-header img {
+  width: 145px;
+  height: 40px;
+  object-fit: contain;
+}
+.imgae-dark-header{
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+}
+.banner-inner-section{
+    height:550px;
+}
+#exTab1 a {
+  color: inherit;
+  text-decoration: none;
+  margin-right: 20px;
+}
+.tab-content td {
+  padding: 16px 40px;
+  border-bottom: 1px solid #f3f4f7;
+}
+.tab-heading th {
+  padding: 15px 40px;
+  color: #fff;
+}
+#exTab1 .active a {
+  color: #FF023E;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.connect-icon {
+  border: 2px solid #feeeed;
+  border-radius: 50px;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 32px;
+  top: -29px;
+  background-color: #feeeed;
+}
+.connect-icon i {
+  font-size: 35px;
+  color: #FF023E;
+}
+.single-post-header h1 {
+  font-size: 48px;
+}
+.hover-effect{
+  transition: 0.4s;
+    border: 2px solid #fff;
+}
+.hover-effect:hover{
+  -webkit-transform: translateY(-4px);
+   transform: translateY(-4px);
+   border: 2px solid #FF023E;
+   cursor:pointer;
+}
+.jobs-list-icon i {
+  font-size: 40px;
+  color: #FF023E;
+  margin-right: 12px;
+}
+.blog-post-section a {
+  color: inherit;
+}
+.clr-inherit{
+     color: inherit;
+     text-decoration:none;
+}
+.clr-inherit :hover {
+  color: #FF023E;
+}
+.block-icon i {
+  font-size: 32px;
+  color: #FF023E;
+}
+.connect-icon.privacy-icon {
+  top: -40px;
+  right: 110px;
+}
+.banner-section{
+    background-image: url('https://discoverorg.com/wp-content/themes/discoverorg/images/dots.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.btn.account-btn {
+  padding: 0px 40px;
+  color: #fff;
+  background: #FF023E;
+}
+/*media query*/
+ @media only screen and (min-width:768px){
+ .heigth-100{
+    height:100%;
+  }
+.list-career {
+  max-width: 65%;
+  margin: 0 auto;
+}
+ }
+@media only screen and (max-width:767px){
+ .logo-block{
+     text-align:center;
+ }
+ .hero__title {
+    font-size: 32px;
+ }
+.banner-email {
+    width: 100%;
+ }
+ .block-space {
+    padding-top: 40px;
+}
+.email-send-blk{
+    width: 100%;
+}
+.main-title-text {
+    font-size: 22px;
+}
+.sign-up-blk {
+    position: relative;
+    bottom: 6px;
+    float: right;
+ }
+ .block-space-bottom{
+    padding-bottom: 40px;
+ }
+.single-post-header h1 {
+  font-size: 25px;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.accordion-button{
+    font-size:15px;
+}
+ }
+
+
+/***************13.04.2022*******************/
+ .prospecting-header li {
+    padding-bottom: 15px;
+}
+.prospecting-header ul {
+    border: none;
+}
+.prospecting-header li button {
+    background: none;
+    border: none;
+    padding-bottom: 10px;
+}
+.prospecting-header li.active button{
+    border-bottom: 4px solid rgb(6, 85, 255);
+}
+ 
+ /***************14.04.2022*******************/
+ 
+ .prospecting-accordions button.accordion-button h5 {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    margin-top: 10px;
+}
+.accordion-item:first-child {
+    border-bottom: 2px solid #ececec !important;
+}
+.prospecting-accordions .accordion-button {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    padding: 15px 0 15px 15px;
+    border-bottom: 1px solid #ececec !important;
+}
+ .prospecting-accordions .accordion-button:hover{
+     color: rgb(6, 85, 255);
+ }
+ .prospecting-accordions input {
+    font-size: 12px;
+    padding-left: 0;
+    /*border-bottom: 1px solid #ececec !important;*/
+    border-radius: 0;
+}
+.prospecting-accordions input::-webkit-input-placeholder{
+    color:#bdbdbd;
+}
+.prospecting-accordions input:last-child{
+    border-bottom:0px solid #000 !important;
+}
+.prospecting-accordions .accordion-button:hover {
+    background: #fafafa;
+}
+.prospecting-accordions input:hover {
+    background: #fafafa;
+}
+.prospecting-accordions .accordion-button:hover input {
+    background: #fafafa;
+}
+table#people_list p {
+    font-size: 14px;
+}
+ 
+@media only screen and (max-width:991px){
+.banner-inner-section {
+  height: 320px;
+ }
+}
+ 
+@media only screen and (min-width:992px){
+.heigth-lg-100{
+         height:100%;
+     }
+ }
+ 
+ 
+@media only screen and (min-width:768px) and (max-width:991px){
+    .navbar-toggler {
+    position: relative;
+    left: 10px;
+ }
+ .banner-inner-section h1 {
+  font-size: 38px;
+}
+}
+
+ @media only screen and (min-width:1200px){
+.success-storie-text{
+  height: 300px;
+}
+}
+

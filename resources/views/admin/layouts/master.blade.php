@@ -19,7 +19,7 @@
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
          <!-- Navbar Search -->
-         <li class="nav-item">
+         <!-- <li class="nav-item">
             <a class="nav-link" data-widget="navbar-search" href="#" role="button">
             <i class="fas fa-search"></i>
             </a>
@@ -38,13 +38,35 @@
                   </div>
                </form>
             </div>
-         </li>
+         </li> -->
          <!-- Messages Dropdown Menu -->
          <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="{{ route('admin.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
-               {{ csrf_field() }} 
-            </form>
+            @if (Route::has('login'))
+               <div class="hidden login-reg-blk d-flex align-items-center">
+
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }}
+                    </a>
+                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+
+                        <a class="dropdown-item" href="{{url('admin/admin-profile')}}">
+                          {{ __('Account') }}
+                        </a>
+                        <a class="dropdown-item" href="{{url('admin/change-password')}}">
+                          {{ __('Change Password') }}
+                        </a>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+               </div>
+            @endif
          </li>
          <!-- Notifications Dropdown Menu -->
       </ul>
@@ -172,7 +194,7 @@
                      </li>
                   </ul> -->
                </li>
-               <li class="nav-item {{ request()->is('admin/firm-add-service') || request()->is('admin/firm-all-service') || request()->is('admin/manage-firm-services') ? 'menu-open active' : '' }}">
+              <!--  <li class="nav-item {{ request()->is('admin/firm-add-service') || request()->is('admin/firm-all-service') || request()->is('admin/manage-firm-services') ? 'menu-open active' : '' }}">
                   <a href="#" class="nav-link">
                      <i class="fa fa-dropbox nav-icon" aria-hidden="true"></i>
                      <p>
@@ -196,7 +218,7 @@
                         </a>
                      </li>
                   </ul>
-               </li>
+               </li> -->
                <!--plan-->
                <li class="nav-item {{ request()->is('admin/add-plan') || request()->is('admin/all-plan-list') ? 'menu-open active' : '' }}">
                   <a href="#" class="nav-link">
@@ -221,6 +243,24 @@
                         </a>
                      </li>
                   </ul>
+               </li>
+                <li class="nav-item {{ request()->is('admin/member-add-service') || request()->is('admin/member-all-service') || request()->is('admin/manage-member-services') ? 'menu-open active' : '' }}">
+                  <a href="#" class="nav-link">
+                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                     <p>
+                           Order
+                        <i class="fas fa-angle-left right"></i>
+                     </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                     <li class="nav-item">
+                        <a href="{{url('admin/order/all-order')}}" class="nav-link {{ request()->is('admin/order/all-order') ? 'active' : '' }}">
+                           <i class="far fa-circle nav-icon"></i>
+                           <p>All Orders</p>
+                        </a>
+                     </li>
+                  </ul>
+
                </li>
                    <li class="nav-item {{ request()->is('admin/member-add-service') || request()->is('admin/member-all-service') || request()->is('admin/manage-member-services') ? 'menu-open active' : '' }}">
                   <a href="#" class="nav-link">
@@ -294,7 +334,7 @@
                  
                </li>
                <!-- end career -->
-               <li class="nav-item {{ request()->is('admin/add-country') || request()->is('admin/all-country-list') ? 'menu-open active' : '' }}">
+               <!-- <li class="nav-item {{ request()->is('admin/add-country') || request()->is('admin/all-country-list') ? 'menu-open active' : '' }}">
                   <a href="#" class="nav-link">
                      <i class="fa fa-pie-chart nav-icon" aria-hidden="true"></i>
                      <p>
@@ -318,6 +358,33 @@
                         </a>
                      </li>
                   </ul>
+               </li> -->
+
+                   <li class="nav-item {{ request()->is('admin/professional/professional-add') || request()->is('admin/professional/professional-list') || request()->is('admin/manage-member-services') ? 'menu-open active' : '' }}">
+                  <a href="#" class="nav-link">
+                     <i class="fas fa-blog nav-icon" aria-hidden="true"></i>
+                     <p>
+                        Professionals
+                        <i class="fas fa-angle-left right"></i>
+                     </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                     <li class="nav-item">
+                        <a href="{{url('admin/professional/professional-add')}}" class="nav-link {{ request()->is('admin/professional/professional-add') ? 'active' : '' }}">
+                           <i class="far fa-circle nav-icon"></i>
+                           <p>Add Professional</p>
+                        </a>
+                     </li>
+                  </ul>
+                  <ul class="nav nav-treeview">
+                     <li class="nav-item">
+                        <a href="{{url('admin/professional/professional-list')}}" class="nav-link {{ request()->is('admin/professional/professional-list') ? 'active' : '' }}">
+                           <i class="far fa-circle nav-icon"></i>
+                           <p>All Professional</p>
+                        </a>
+                     </li>
+                  </ul>
+                  
                </li>
 
             </ul>

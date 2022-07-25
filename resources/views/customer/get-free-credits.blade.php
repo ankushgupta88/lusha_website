@@ -1,14 +1,14 @@
-@extends('layouts.master')
+@extends('layouts.after-login-master')
 
 @section('content')
 
 <section class="app"> 
  <div class="container-fluid">
      <div class="row">
-        <div class="col-md-2 shadow">
+        <div class="col-md-2 side-content shadow">
             @include('layouts.sidebar')
         </div>
-          <div class="col-md-9">
+         <div class="col-md-9">
             <div class="content-main lusha-community-cont ">
               <div class="app-content p-md-5 pt-5">
                   <div class="row align-items-center">
@@ -67,13 +67,10 @@
                 </div>
               </div>
             </div>
-        </div>
      </div>
  </div>
 </section>
-
-
-
-
-
 @endsection
+
+
+

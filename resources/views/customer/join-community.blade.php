@@ -1,20 +1,27 @@
-@extends('layouts.master')
+@extends('layouts.after-login-master')
 
 @section('content')
 
 <!--banner section-->
-    <section class="banner-section bg-clr py-2 py-md-5">
-        <div class="container">
-         <div class="row align-items-center">
-             <div class="col-md-12 text-center">
-                 <div class="banner-text text-white">
-                     <h1 class="fw-bold">Join the Lusha community, <br> Get credits!</h1>
-                     <a href="{{url('/get-free-credits')}}"><button class="btn banner-btn-primary my-4"> Get free credits  </button></a>
-                 </div>
-             </div>
-         </div>
+<section class="app"> 
+ <div class="container-fluid">
+     <div class="row">
+         <div class="col-md-2 side-content shadow">
+            @include('layouts.sidebar')
         </div>
-    </section>
+          <div class="col-md-9">
+    <!--<section class="banner-section bg-clr py-2 py-md-5">-->
+    <!--    <div class="container">-->
+    <!--     <div class="row align-items-center">-->
+    <!--         <div class="col-md-12 text-center">-->
+    <!--             <div class="banner-text text-white">-->
+    <!--                 <h1 class="fw-bold">Join the Lusha community, <br> Get credits!</h1>-->
+    <!--                 <a href="{{url('/get-free-credits')}}"><button class="btn banner-btn-primary my-4"> Get free credits  </button></a>-->
+    <!--             </div>-->
+    <!--         </div>-->
+    <!--     </div>-->
+    <!--    </div>-->
+    <!--</section>-->
     
 <!--two block section-->
    <section class="two-block-section block-space">
@@ -165,4 +172,8 @@
          </div>
       </div>
   </section>
+  </div>
+   </div>
+         </div>
+      </section>
 @endsection

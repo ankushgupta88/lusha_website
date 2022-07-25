@@ -1,198 +1,238 @@
-@extends('layouts.master')
-
+@extends('layouts.master2')
 @section('content')
+
+
 <!--banner section-->
-    <section class="banner-section py-2 py-md-5">
-        <div class="container">
+    <section class="banner_section_main">
+        <div class="container-fluid">
          <div class="row align-items-center">
              <div class="col-md-6">
-                 <div class="banner-text  text-center text-md-start">
-                     <h1 class="hero__title fw-bold">#1 Lead intelligence solution for sales</h1>
-                     <p class="hero__subtitle">Lusha’s lead intelligence solution delivers accurate direct dials, phone numbers and emails to speed up sales with less work.</p>
+                 <div class="banner_text  text-center text-md-start">
+                     <h1 class="hero__title fw-bold"><span style="color: #FFB116;"> Best</span> intelligence solution for sales</h1>
+                     <img src="{{url('public/assets/images/prospecting_1.png')}}" alt="Image"/ class="img-fluid">
+                     <p class="hero__subtitle">This service provides correct direct dials, contact numbers, and emails to help you increase sales with less work and expand in the market.</p>
                      <div class="banner-email mt-4">
                     @if(Auth::user())
                       <div class="my-account-btn">
-                        <a href="{{url('/dashboard')}}"><button class="btn account-btn py-3">My Account</button></a>
-                      </div> 
+                        <a href="{{url('/dashboard')}}"><button class="btn account_btn py-3">Start For Free</button></a>
+                      
                     @else
-                     <div class="d-flex position-relative">
-                        <input class="form-control me-2 py-3" type="search" placeholder="Enter your work email" aria-label="Search">
-                        <a href="{{url('/register')}}"><button class="btn submit-btn py-3">Start up for free</button></a>
-                      </div>
+                      <a href="{{url('/register')}}"><button class="btn py-3 get_start">Start For Free</button></a>
                     @endif 
+                    </div> 
                  </div>
-                 </div>
+                 
              </div>
              <div class="col-md-6">
                  <div class="banner-img">
-                     <img src="{{url('public/assets/images/ban-img.png.png')}}" alt="Image"/ class="img-fluid">
+                     <img src="{{url('public/assets/images/Usability-testing-pana.png')}}" alt="Image"/ class="img-fluid">
                  </div>
              </div>
          </div>
         </div>
     </section>
     
- <!--image text section-->
-   <section class="image-text-section py-5">
-       <div class="container">
-          <div class="row">
-              <div class="col-md-12">
-                 <div class="main-title text-center mb-4 mb-md-5">
-                     <h1 class="main-title-text fw-bold"> One solution for your entire sales team </h1>
-                 </div>
-             </div>
-          </div>
-          <div class="row align-items-center">
-            <!--1-->
-              <div class="col-md-6">
-                 <div class="sales-team-image">
-                     <img src="{{url('public/assets/images/enterprise-img-1.jpg')}}" alt="Image"/ class="img-fluid">
-                 </div>
-              </div>
-              <div class="col-md-6">
-                 <div class="sales-team-text">
-                    <h2 class="fw-bold pb-2">SDRs book more qualified meetings </h2> 
-                    <p> Find the right people and uncover the right information on any prospect you’re looking for with direct contact data. Identify leads that meet your qualification criteria and discover new target accounts with our robust search functionality. Lusha enables you to hit your quota and increase your win rate.</p>
-                 </div>
-              </div>
-            <!--2-->
-              
-              <div class="col-md-6">
-                 <div class="sales-team-text">
-                    <h2 class="fw-bold pb-2">AEs close more deals </h2> 
-                    <p> Quit relying on other team members to fill up your pipeline with qualified leads. Find new prospects and opportunities on your own with target-like audiences. Pinpoint decision makers easily with 36M C-level profiles. Locate any decision maker across the pipeline to speed up to close and exceed your goals.</p>
-                 </div>
-              </div>
-              <div class="col-md-6">
-                 <div class="sales-team-image">
-                      <img src="{{url('public/assets/images/enterprise-img-2.jpg')}}" alt="Image"/ class="img-fluid">
-                 </div>
-              </div>
-              
-            <!--3-->
-              <div class="col-md-6">
-                 <div class="sales-team-image">
-                    <img src="{{url('public/assets/images/enterprise-img-3.jpg')}}" alt="Image"/ class="img-fluid">
-                 </div>
-              </div>
-              <div class="col-md-6">
-                 <div class="sales-team-text">
-                    <h2 class="fw-bold pb-2">Sales leaders manage teams better </h2> 
-                    <p> Easily build a more visible, qualified, and robust pipeline with enterprise-grade team management. Boost productivity all round with flexible control and visibility of contact credits. Identify opportunities for revenue growth and easily manage credit usage. Distribute credits where you need them most and limit credits anytime to get the most value from Lusha Enterprise.</p>
-                 </div>
-              </div>
-          </div>
-       </div>
-   </section>
-   
-   <!--Shorten sales section-->
-     
-    <section class="shorten-sales-section gray-bg block-space block-space-bottom">
-     <div class="container">
-         <div class="row">
-             <div class="col-md-12">
-                 <div class="main-title text-center">
-                     <h1 class="main-title-text fw-bold"> Shorten your sales cycle in minutes </h1>
-                 </div>
-             </div>
-         </div>
+
+    
+<!--services section-->
+<section class="services_main services_enterprise">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="service_caption">
+                <h2>Expand your market reach</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="services_left">
+                    <img src="{{url('public/assets/images/Remote-team-amico.png')}}" alt="Image"/ class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="services_right">
+                    <h2>Book qualifying meetings</h2>
+                    <p>With direct contact data, you can find the appropriate individuals and find the correct facts about any prospect you’re searching for. Using our powerful search tool, you can find leads that satisfy your requirements and discover new target accounts. </p>
+                    <!--<a href="#"><button class="btn more_details py-3">More Details</button></a>-->
+                </div>
+            </div>
+        </div>
+        <div class="row services_right_main">
+            <div class="col-md-6 services_right_inner">
+                <div class="services_right">
+                    <h2>Get More Deals</h2>
+                    <p>Stop depending on other members of your team to feed your funnel with qualified leads. Find fresh possibilities and opportunities with target-like audiences on your own.    Locate any decision maker across the funnel to close faster and achieve your targets.</p>
+                    <!--<a href="{{url('/site-integrations')}}"><button class="btn more_details py-3">More Details</button></a>-->
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="services_left">
+                    <img src="{{url('public/assets/images/Speech-to-text-pana.png')}}" alt="Image"/ class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="services_left">
+                    <img src="{{url('public/assets/images/Mobile-feed-pana.png')}}" alt="Image"/ class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="services_right">
+                    <h2>Leader's <br>management for team</h2>
+                    <p>With enterprise-grade team management, you can easily create a more accessible, certified, and powerful funnel. Increase overall productivity and identify income growth possibilities and easily control credit use. Distribute credits where they are most needed and limit credits at any point to get the most out of our tool.</p>
+                    <!--<a href="#"><button class="btn more_details py-3">More Details</button></a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--benefits section-->
+    <section class="benefits-section benefits_enterprise block-space block-space-bottom">
+     <div class="container-fluid">
          <div class="row pt-4 pt-md-5">
-             <div class="col-md-4">
-                 <div class="benefits-blk-content mb-3 mb-md-0 text-center shadow p-4 heigth-100 bg-white">
-                      <img src="{{url('public/assets/images/price-list.png')}}" alt="Image"/ class="img-fluid">
-                    <h5 class="fw-bold mb-0 py-2 mt-3"> Integrate with your favorite tools </h5>
-                    <p class="mb-0 px-4"> Instantly automate your workflow. Transfer accurate and actionable prospect data to Salesforce, Outreach or SalesLoft in one click </p>
+             <div class="col-lg-4">
+                 <div class="benefits_contents mb-3 mb-md-0 text-center p-4 heigth-100 bg-white">
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                    <h5 class="fw-bold mb-0 py-2 mt-3"> API to enrich data.</h5>
+                    <p class="mb-0 px-4"> Our API automatically fills your whole database in bulk, either through technical integration or Zapier, and many more methods are available. </p>
                  </div>
              </div>
-             <div class="col-md-4">
-                 <div class="benefits-blk-content mb-3 mb-md-0 text-center shadow p-4 heigth-100 bg-white">
-                     <img src="{{url('public/assets/images/integration.png')}}" alt="Image"/ class="img-fluid">
-                    
-                    <h5 class="fw-bold mb-0 py-2  mt-3"> Data enrichment API </h5>
-                    <p class="mb-0 px-4"> Lusha API automatically enriches your entire database at bulk, either via technical integration or Zapier </p>
+             <div class="col-lg-4">
+                 <div class="benefits_contents mb-3 mb-md-0 text-center p-4 heigth-100 bg-white">
+                   <i class="fa fa-wrench" aria-hidden="true"></i>
+                    <h5 class="fw-bold mb-0 py-2  mt-3"> Integrate with your tools </h5>
+                    <p class="mb-0 px-4"> Immediately automate your workflow by integrating with your tools. Transfer real – time actionable prospect data to your tools with a few simple clicks.</p>
                  </div>
              </div>
-             <div class="col-md-4">
-                 <div class="benefits-blk-content mb-3 mb-md-0 text-center shadow p-4 heigth-100 bg-white">
-                     <img src="{{url('public/assets/images/terms-of-use.png')}}" alt="Image"/ class="img-fluid">
-                    <h5 class="fw-bold mb-0 py-2  mt-3"> Data you can trust </h5>
-                    <p class="mb-0 px-4"> Every Lusha record is CCPA compliant and GDPR aligned, and 27001 ISO certified. Work in total alignment with all laws and regulations </p>
+             <div class="col-lg-4">
+                 <div class="benefits_contents mb-3 mb-md-0 text-center p-4 heigth-100 bg-white">
+                   <i class="fa fa-lock" aria-hidden="true"></i>
+                    <h5 class="fw-bold mb-0 py-2  mt-3"> Trusted data </h5>
+                    <p class="mb-0 px-4">Our data is committed to and in accordance with the GDPR and CCPA regulations. Work in complete accordance with all applicable rules and regulations.</p>
                  </div>
              </div>
          </div>
      </div>
     </section>
-    
- <!--number count section-->
-   <section class="number-counter-section block-space block-space-bottom">
-       <div class="container">
-          <div class="row">
-              <div class="col-md-12">
-                 <div class="main-title text-center">
-                     <h1 class="main-title-text fw-bold"> The most accurate data you'll find </h1>
-                 </div>
-             </div> 
-          </div>
-          <div class="row pt-5">
-              <div class="col-md-3 col-6">
-                  <div class="number-count-content text-center">
-                      <div class="item-icon"> <i class="fa fa-user" aria-hidden="true"></i> </div>
-                      <h2 class="fw-bold pt-3"> 100M </h2>
-                      <p> Business Profiles </p>
-                  </div>
-              </div>
-              <div class="col-md-3 col-6">
-                  <div class="number-count-content text-center">
-                       <div class="item-icon"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
-                      <h2 class="fw-bold pt-3"> 60M </h2>
-                      <p> Email Addresses </p>
-                  </div>
-              </div>
-              <div class="col-md-3 col-6">
-                  <div class="number-count-content text-center">
-                       <div class="item-icon"> <i class="fa fa-phone" aria-hidden="true"></i> </div>
-                      <h2 class="fw-bold pt-3"> 50M </h2>
-                      <p> Direct Dials </p>
-                  </div>
-              </div>
-              <div class="col-md-3 col-6">
-                  <div class="number-count-content text-center">
-                       <div class="item-icon"> <i class="fa fa-building-o" aria-hidden="true"></i> </div>
-                      <h2 class="fw-bold pt-3"> 15M </h2>
-                      <p> Company Profiles </p>
-                  </div>
-              </div>
-          </div>
-       </div>
-   </section>
-   
-<!--image text section-->
-   <section class="image-text-section py-5">
-       <div class="container">
-          <div class="row">
-              <div class="col-md-12">
-                 <div class="main-title text-center mb-4 mb-md-5">
-                     <h1 class="main-title-text fw-bold"> One solution for your entire sales team </h1>
-                 </div>
-             </div>
-          </div>
-          <div class="row align-items-center">
-            <!--1-->
-              <div class="col-md-6">
-                 <div class="sales-team-image">
-                     <img src="{{url('public/assets/images/enterprise-img-4.jpg')}}" alt="Image"/ class="img-fluid">
-                 </div>
-              </div>
-              <div class="col-md-6">
-                 <div class="sales-team-text">
-                    <h2 class="fw-bold pb-2">Frictionless onboarding </h2> 
-                    <p> Free up your time with our zero hassle setup. Start using Lusha in 60 seconds and find more qualified leads right away. You’ll also be partnered with a dedicated account manager, committed to your success from day one.</p>
-                 </div>
-              </div>
-          </div>
-       </div>
-   </section>
-   
-  
 
-@endsection
+
+
+<!--Sign up and expand your horizons section-->
+
+<section class="boost_revenue">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="revenue_content horizons">
+                    <i class="fa fa-database" aria-hidden="true"></i>
+                    <h2>Sign up and expand your horizons</h2>
+                    <p>Obtain the most up-to-date prospect data.</p>
+                    <div class="revenue_button">
+                      @if(Auth::user())
+                        <a href="{{url('/dashboard')}}"><button class="btn more_details py-3">Get Started</button></a>
+                    @else
+                        <a href="{{url('/register')}}"><button class="btn more_details py-3">Get Started</button></a>
+
+                    @endif
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+<!--number counter section-->
+<section class="number_counter_section block-space block-space-bottom">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-3 col-sm-6">
+            <div class="counter-box number_count_content text-center">
+               <div class="counter_cont">
+                  <h2 class="fw-bold pt-3 counter">80 </h2>
+                  <span> M</span>
+               </div>
+               <p> Email Address </p>
+            </div>
+         </div>
+         <div class="col-md-3 col-sm-6">
+            <div class="counter-box number_count_content text-center">
+               <div class="counter_cont">
+                  <h2 class="fw-bold pt-3 counter">120 </h2>
+                  <span> M</span>
+               </div>
+               <p> Business Profiles </p>
+            </div>
+         </div>
+         <div class="col-md-3 col-sm-6">
+            <div class="counter-box number_count_content text-center">
+               <div class="counter_cont">
+                  <h2 class="fw-bold pt-3 counter">25 </h2>
+                  <span> M</span>
+               </div>
+               <p> Company Profiles </p>
+            </div>
+         </div>
+         <div class="col-md-3 col-sm-6">
+            <div class="counter-box number_count_content text-center">
+               <div class="counter_cont">
+                  <h2 class="fw-bold pt-3 counter">75 </h2>
+                  <span> M</span>
+               </div>
+               <p> Direct Dials </p>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+   
+   
+ 
+  
+  
+  <section class="services_main services_enterprise services_enterprise_lst">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="services_left">
+                    <img src="{{url('public/assets/images/Profiling-amico.png')}}" alt="Image"/ class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="services_right">
+                    <h2>No-Hassle Hiring</h2>
+                    <p>Our no-hassle setup saves you time and b egin utilising our platform to find more quality leads right immediately. You’ll also work with a professional account manager who is devoted to your success from the start.</p>
+                    <!--<a href="#"><button class="btn more_details py-3">More Details</button></a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  
+  
+   
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   
+   <script>
+       $(document).ready(function() {
+
+$('.counter').each(function () {
+$(this).prop('Counter',0).animate({
+Counter: $(this).text()
+}, {
+duration: 4000,
+easing: 'swing',
+step: function (now) {
+$(this).text(Math.ceil(now));
+}
+});
+});
+
+});
+   </script>
+ 
+@endsection  

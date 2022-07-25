@@ -1,42 +1,126 @@
-@extends('layouts.master')
-
+@extends('layouts.master2')
 @section('content')
- 
-    
- <!--term use section-->
-   <section class="about-section py-4 py-md-5">
-       <div class="container">
-          <div class="row">
-               <div class="col-md-12 mx-auto">
-                 <div class="information-text  px-2 px-md-0">
-                    <h3 class="fw-bold pb-3">Lusha Community Terms of Use</h3> 
-                    <h5><strong> Welcome to the Lusha Community! </strong></h5>
-                    <p> Our community members (“Community Members”) help keep Lusha’s database accurate and up-to-date by sharing their professional network’s contact details in exchange for extra credits (“Credits”) or access to premium features (“Benefits”).
-                        <br> Please read the below Community terms and conditions of use (“Terms”) carefully before signing up to Lusha Community.
-                        <br> These Terms apply to the engagement between Lusha Systems Inc. and its affiliates (including subsidiaries, parent companies, joint ventures, and other corporate entities under common ownership) (“Lusha“, “Us” or “We“) and you, the Community Member.
-                        </p>
-                        <h5 class="py-2"> <strong> 1. The Community and the Service – joining, access, benefits, cancellation</strong></h5>
-                        <p class="ps-4"> <strong> a. </strong>The Services are not offered to individual users. You hereby represent and warrant that you have the rights, permissions, and applicable authorizations to join the Lusha Community. By becoming a Community Member, you bind the legal entity on behalf of whom it is subscribing herewith. If you do not have such right or authorization or have any reason to believe that you are not authorized to join the Lusha Community, please refrain from joining the Lusha Community or cancel your participation immediately.</p>
-                        <p class="ps-4"> <strong> b. </strong> If you choose to join the Lusha Community, you expressly authorize and request Lusha’s Services to access, via your (a) email account (Outlook or G-Suite) permissions, to your contacts in your email database, including their names, email addresses, job titles, company names and phone numbers found in their email headers and signatures, and if connected (b) to your CRM account permissions, to your contacts, including their names, email addresses, job titles, company names, and phone numbers. Access will be granted to all contacts in the email database, without the option to “remove” specific contacts. Please note that such contacts may reach out to Lusha directly to request their removal from the Database.
-                        </p>
-                         <p class="ps-4"> <strong> c. </strong> Lusha will use the relevant parts of the information to enrich its Database and contribute to the expansion of the Lusha Community. Lusha may reproduce, distribute, publish, or display the information collected or any portion thereof, and sell, transfer, disclose or make available the information or any portion thereof to any third party, including Lusha’s customers.
-                          </p>
-                           <h5 class="py-2"> <strong> 2. Operating in accordance with Lusha’s Code of Conduct</strong></h5>
-                        <p class="ps-4"> <strong> a. </strong>In exchange for joining the Lusha Community and providing access to the information, as described above, you will be entitled to Benefits in your use of the Services. The Benefits will be presented to you in a separate offer by Lusha. Benefits may include Credits or additional premium features, at Lusha’s sole discretion. Lusha may replace or change the Benefits at any time. If you are not satisfied with any changes in the Benefits, you can opt out of Lusha Community at any time.</p>
-                        <p class="ps-4"> <strong> b. </strong> When you sign up to become a Community Member, you will receive a certain amount of Credits as a 1-time bonus. Each month following that, as a Community Member, you will receive additional certain credits per month until such point that you are no longer a Community member. These credits may not be re-assigned. The credit amounts shall be detailed in the offer before the signup.
-                        </p>
-                         <p class="ps-4"> <strong> c. </strong> Any Credits not used in a given month will not roll over to the following month.
-                          </p>
-                 </div>
-              </div>
-           </div>
-       </div>
-   </section>
-    
-
-   
-
-   
-  
-
+<style>
+   #two,#three,#four,#five,#six {
+   display: none;
+   }
+</style>
+<!--banner section-->
+<section class="banner_section_main faq_banner">
+   <div class="container-fluid">
+      <div class="row align-items-center">
+         <div class="col-md-8">
+            <div class="banner_text  text-center text-md-start">
+               <h1 class="hero__title fw-bold">Community <span style="color: #FFB116;"> Terms</span>Of Use</h1>
+               <p class="hero__subtitle">Follow our community's terms of service and help to making our platform more accurate. Please contact us if you require any other information.</p>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<section class="tabbing">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-3">
+            <div class="sidebar">
+               <button class="sidebarBtn selected" onclick=(switchTabs("one")) id="oneBtn">
+               The Community and the Service
+               </button>
+               <button class="sidebarBtn" onclick=(switchTabs("two")) id="twoBtn">
+               Operating in accordance
+               </button>
+               <button class="sidebarBtn" onclick=(switchTabs("three")) id="threeBtn">
+               Cancellation
+               </button>
+               <button class="sidebarBtn" onclick=(switchTabs("four")) id="fourBtn">
+               Operating in accordance with Lusha’s Code of Conduct
+               </button>
+               <button class="sidebarBtn" onclick=(switchTabs("five")) id="fiveBtn">
+               Our ethical principles
+               </button>
+               <button class="sidebarBtn" onclick=(switchTabs("six")) id="sixBtn">
+               Professional Responsibilities
+               </button>
+            </div>
+         </div>
+         <div class="col-md-9">
+            <div class="content">
+               <div id="one" class="tab">
+                  <p>Joining, access, benefits, cancellation</p>
+                  <p>Our community members contribute to the accuracy and maintenance of our database by donating the contact information of their professional network in exchange for extra credits or access to premium services. These Terms govern the relationship between our platform and you, the Community Member.&nbsp;</p>
+                  <h4><b>1. Joining, access, benefits, cancellation</b></h4>
+                  <p><strong>a.&nbsp;</strong>Individual users are not eligible for the Services. You represent and warrant that you have all of the necessary rights, permissions, and authorizations to join our Community.&nbsp;&nbsp;</p>
+                  <p><strong>b.&nbsp;</strong>If you choose to join our Community, you expressly authorize and request that our Services access your contacts in your email database, including</p>
+                  <ul><li>Their names</li><li>Email addresses</li><li>Job titles</li><li>Company names, and phone numbers&nbsp;</li></ul>
+                  <p><strong>c.&nbsp;</strong>The appropriate sections of the information will be used by it to expand its database and help the growth of our Community which can do the following things;</p>
+                  <ul><li>May reproduce</li><li>Distribute</li><li>Publish</li><li>or display the information gathered or any portion of it</li><li>Transfer</li><li>Disclose</li><li>Make the information or any portion of it accessible to any third party including our customers</li></ul>
+                  <p><strong>d.&nbsp;</strong>You recognize and agree that after joining our Community, the services will automatically access and collect information stored in your email account, both locally and/or on a distant server.</p>
+                  <p><strong>e.&nbsp;</strong>Please keep in mind that it will not read the content of your email exchange and that the only information received will be the information indicated above.</p>
+                  <p><strong>f.&nbsp;&nbsp;</strong>It will do a validity check on your email account and any other integration.</p>
+               </div>
+               <div id="two" class="tab">
+                   <h3>2. Operating in accordance</h3>
+                   <p><strong>a. </strong>In exchange for joining our community and providing access to the information stated above, you will be entitled to benefits in your usage of the Services. It will present you with the benefits in a separate offer.&nbsp;&nbsp;</p>
+                   <p><strong>b.&nbsp;</strong>As a one-time incentive, when you join up to become a community member you will recieve great benefits.&nbsp;</p>
+               </div>
+               <div id="three" class="tab">
+                   <h3>3. Cancellation</h3>
+                   <p><strong>a. </strong>You can discontinue your involvement in our community at any moment.</p>
+                   <p><strong>b. </strong>If you cancel your participation in our Community, then:</p>
+                   <p>&nbsp; i. Any benefits you have received in return for your membership will not be renewed, and will expire on the day of cancellation.</p>
+                   <p>&nbsp;ii. You will, however, be allowed to use the benefits that have already been provided to you as of the date of cancellation.</p>
+                   <p>&nbsp;iii. You will no longer have any access to our community.&nbsp;</p>
+               </div>
+               <div id="four" class="tab">
+                   <h3>4. Operating in accordance with Code of Conduct</h3>
+                   <p><strong>a.&nbsp;</strong>Our code of conduct ("Code") directs how we gather, validate, and safeguard data.&nbsp;</p>
+                   <p><strong>b.&nbsp;</strong>Our worldwide community was created to help it become the easiest, collaborative, and accurate data-enrichment service possible, due to the community member's contribution.&nbsp;</p>
+                   <p><strong>c.&nbsp;</strong>By joining our community, you accept and undertake to act in line with the code and to support, promote, and respect its ideals. Failure to follow the Code of Conduct may result in the instant cancellation of your membership in our community.&nbsp;</p>
+                   <p><strong>d.&nbsp;</strong>Each Community Member should promote and completely support all B2B professionals in adhering to the Code.&nbsp;&nbsp;</p>
+               </div>
+               <div id="five" class="tab">
+                   <h3>5. Our ethical principles</h3>
+                   <p><strong>a.&nbsp; Collaboration:</strong></p>
+                   <p>Our community promotes the exchange of reliable and up-to-date B2B contact information. It takes steps to delete public emails such as Gmail and other accounts) and to amend any outdated or false information.&nbsp;&nbsp;</p>
+                   <p><strong>b. Avoid all harm:</strong></p>
+                   <p>Our community has a stringent "no harm" policy. This implies that we do not reveal any information that may cause harm to others.&nbsp;&nbsp;</p>
+                   <p><strong>c. Honor confidentiality:</strong></p>
+                   <p>Because it is not legally obliged, it will not reveal the source of its professional contact information. Our Community Members are also required not to reveal professional data that are in "stealth mode" or that would wish to stay private.</p>
+               </div>
+               <div id="six" class="tab">
+                   <h3>6. Professional Responsibilities</h3>
+                   <p><strong>a. Professionalism:</strong></p>
+                   <p>We are committed to and work hard to always stay up to date with relevant laws and legislation regarding the proper use of information provided to our users, including the proper conduct of sending mass unsolicited emails (SPAM) or conducting mass unsolicited phone calls in any jurisdiction in which our users operate.</p>
+                   <p><strong>b. Respect privacy:</strong></p>
+                   <p>The information given will not be used in any way that breaches individual rights. We do not gather unnecessary company contact information and do not keep it for any longer than required.</p>
+                   <p><strong>c. Fairness:</strong></p>
+                   <p>It and its Community Members must cooperate with any data subject requests, which may include requests to stop using or processing information, as well as requests to erase business information.</p>
+                   <p>These are the responsibilities that we fulfill to maintain the reliability of our platform.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
 @endsection
+<script>
+   // function to handle the switich
+   function switchTabs(id) {
+   // get all the tabs
+   let tabs = document.querySelectorAll(".tab")
+   // get all the tab buttons
+   let tabBtns = document.querySelectorAll('.sidebarBtn');
+   // loop through the tabs, hiding all of them
+   tabs.forEach(tab => {
+   tab.style.display = 'none';
+   });
+   // loop through the tabs, and remove the '.selected' class
+   tabBtns.forEach(tabBtn => {
+   tabBtn.classList.remove('selected');
+   });
+   // show the desired tab
+   document.getElementById(id).style.display = 'block';
+   // add the 'selected' class to the corresponding btn
+   document.getElementById(id + 'Btn').classList.add('selected');
+   }
+</script>

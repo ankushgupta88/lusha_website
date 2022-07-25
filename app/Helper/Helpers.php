@@ -11,6 +11,13 @@
         $plandata = UserPlan::Where("user_id", $user_id)->get();
         return $plandata;
     }
+    
+    static function ApiKey()
+    {
+        $key = "5fca8958-7b1a-4ac6-9337-7b5e4e6ca9a3";
+        return $key;
+    }
+    
   }
 
   ?>

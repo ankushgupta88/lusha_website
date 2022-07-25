@@ -1,11 +1,11 @@
-@extends('layouts.master')
+@extends('layouts.after-login-master')
 
 @section('content')
 
 <section class="app"> 
  <div class="container-fluid">
      <div class="row">
-        <div class="col-md-2 shadow">
+        <div class="col-md-2 side-content shadow">
             @include('layouts.sidebar')
         </div>
           <div class="col-md-9">
@@ -33,47 +33,47 @@
 
                         </div>
                       <!-- 1 -->
-                      @foreach($myaccount as $profile)
+                      
                         <div id="profile" class="account p-4 my-4 border tabcontent">
                           <h6 class="fw-600 mb-0"> Personal Details </h6>
-                          <form action="{{ url('account-update/'.$profile->id) }}" method="POST" class="pt-4 mb-0">
+                          <form action="{{ url('account-update/'.$checkmyplan['userDetail']->id) }}" method="POST" class="pt-4 mb-0">
                         @csrf
                         @method('PUT')
                               <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
-                                <input type="text" name="name" class="form-control" id="name" value="{{$profile->name}}">
+                                <input type="text" name="name" class="form-control" id="name" value="{{$checkmyplan['userDetail']->name}}">
                               </div>
                               <div class="mb-3">
                                 <label for="emailaddress" class="form-label">Email</label>
-                                <input type="email" name="email" class="form-control" id="emailaddress" value="{{$profile->email}}" readonly>
+                                <input type="email" name="email" class="form-control" id="emailaddress" value="{{$checkmyplan['userDetail']->email}}" readonly>
                               </div>
                                <button type="submit" class="btn app-btn-primary mb-3 mt-1">Save Change</button>
                           </form>
                           
                             <br><small> Want to reset your password?  <br>
-                               <a href="{{ url('account-reset-password/'.$profile->id) }}"> Send me reset instructions </a> </small>
+                               <a href="{{ url('account-reset-password/'.$checkmyplan['userDetail']->id) }}"> Send me reset instructions </a> </small>
                           
                                
                             
                         </div>
-                      @endforeach
+                     
                       <!--2-->
-                      @foreach($currentuser_plane as $current_plan)
+                     
                         <div id="Subscription" class="account p-4 my-4 border tabcontent" style="display:none">
                           <h6 class="fw-600 mb-0"> Subscription </h6>
                            <div class="subscription-info pt-4"> 
                               <ul class="list-unstyled"> 
-                              <li class="d-flex justify-content-between border-bottom mb-3"> <p class="mb-0"> Plan </p> <p class="mb-0">{{$current_plan->plan_name}}</p> </li>
-                              <li class="d-flex justify-content-between border-bottom mb-3"> <p class="mb-0"> Credits </p> <p class="mb-0"> {{$current_plan->credits}}</p> </li>
-                              <li class="d-flex justify-content-between border-bottom mb-3"> <p class="mb-0"> Users </p> <p class="mb-0"> 1 </p> </li>
-                              <li> <small> Your credits will be renewed on January 21, 2022 </small></li>
+                              <li class="d-flex justify-content-between border-bottom mb-3"> <p class="mb-0"> Plan </p> <p class="mb-0">{{$checkmyplan['plandetail']['plan_name']}}</p> </li>
+                              <li class="d-flex justify-content-between border-bottom mb-3"> <p class="mb-0"> Credits </p> <p class="mb-0"> {{$checkmyplan['plandetail']['credits']}}</p> </li>
+                              <!--<li class="d-flex justify-content-between border-bottom mb-3"> <p class="mb-0"> Users </p> <p class="mb-0"> 1 </p> </li>-->
+                       <li> <small> Your credits will be renewed on {{$plan_date}}. </small></li>
                               
                               </ul> 
                              <a href="{{url('/plans')}}" target="blank"><button type="submit" class="btn app-btn-primary mb-3 mt-1">
                               Change Plan</button></a> 
                            </div>
                         </div>
-                      @endforeach
+                    
                       <!-- 3 -->
                         <div id="Billing" class="account p-4 my-4 border tabcontent" style="display:none">
                           <h6 class="fw-600 mb-0"> Invoice History </h6>
@@ -88,7 +88,7 @@
                               </thead>
                               <tbody>
                               @php($count = 0)
-                                @foreach($order_history as $invoice_history)
+                                @foreach($checkmyplan['orderDetail'] as $invoice_history)
                                  @php($count++)
                                           <tr>
                                   <th scope="row">{{$count}}</th>

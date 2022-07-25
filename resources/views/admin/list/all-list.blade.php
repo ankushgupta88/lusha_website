@@ -11,7 +11,7 @@
            <div class="col-sm-6 col-8">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
-              <li class="breadcrumb-item active">List </li>
+              <li class="breadcrumb-item active">List</li>
             </ol>
           </div>
         </div>
@@ -22,13 +22,14 @@
                 <h3 class="card-title">All list</h3>
               </div>
               <!-- /.card-header -->
-              <div class="card-body table-responsive">
+              <div class="card-body">
                 @if (session('success'))
                   <p class="alert alert-success">{{ session('success') }}</p>
                 @endif
                 @if (session('unsuccess'))
                     <p class="alert alert-danger">{{ session('unsuccess') }}</p>
                 @endif
+                <div class="table-responsive">
                 <table id="example7" class="table table-bordered table-hover">
                   <thead>
                   <tr>
@@ -63,6 +64,7 @@
                     @endforeach
                   </tbody>
                 </table>
+                </div>
               </div>
               <!-- /.card-body -->
             </div>

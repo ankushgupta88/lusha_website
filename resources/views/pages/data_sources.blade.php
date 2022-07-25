@@ -1,92 +1,89 @@
-@extends('layouts.master')
-
+@extends('layouts.master2')
 @section('content')
-  <!--banner section-->
-    <section class="banner-inner-section py-2 py-md-5" style="background:linear-gradient(0deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.75)), url('./public/assets/images/sources-banner.jpg')">
-        <div class="container h-100">
-         <div class="row align-items-center h-100">
-             <div class="col-md-6 mx-auto">
-                 <div class="banner-text  text-center text-white">
-                     <h1 class="banner__title fw-bold"> Data Sources</h1>
-                 </div>
-             </div>
+<style>
+   #two,#three,#four {
+   display: none;
+   }
+</style>
+<!--banner section-->
+<section class="banner_section_main faq_banner">
+   <div class="container-fluid">
+      <div class="row align-items-center">
+         <div class="col-md-12">
+            <div class="banner_text  text-center text-md-start">
+               <h1 class="hero__title fw-bold">Data <span style="color: #FFB116;"> Sources</span></h1>
+               <p class="hero__subtitle">The contact and company data that you obtain is updated every time you conduct a search on our platform and validated from different sources</p>
+            </div>
          </div>
-        </div>
-    </section>
-    
- <!--about section-->
-   <section class="about-section pt-4 pt-md-5">
-       <div class="container">
-          <div class="row">
-               <div class="col-md-8 mx-auto">
-                 <div class="sales-team-text text-center px-2 px-md-0">
-                    <h2 class="fw-bold pb-2">Our Data Sources</h2> 
-                    <p class="mb-0">Every time you perform a search in Lusha, the contact and company data that you receive is updated. Lusha’s proprietary algorithm cross-checks data from multiple sources and combines numerous data-points, to create one business contact or company profile.</p>
-                 </div>
-              </div>
-           </div>
-       </div>
-   </section>
-    
-
-   
-    <!--image text section-->
-       <section class="image-text-section py-4 py-md-5">
-           <div class="container">
-              <div class="row align-items-center">
-                   <div class="col-md-6">
-                     <div class="sales-team-image">
-                          <img src="{{url('public/assets/images/source-1.jpg')}}" alt="Image"/ class="img-fluid">
-                     </div>
-                  </div>
-                  <div class="col-md-6">
-                     <div class="sales-team-text px-2 px-md-0">
-                        <h2 class="fw-bold">Third Parties </h2> 
-                        <p>We license information from business partners who own established and trustworthy directories. Our partners utilize the most cutting-edge AI and machine learning technology to collect data from public records, publicly available information, and business directories.</p>
-                        <p> We verify each vendor’s data to ensure its accuracy, before and during the engagement. </p>
-                        <ul class="ps-4"><li>We review each vendor’s security, as well as the security of the data transfer.</li><li>We sign legal documentation with each vendor to ensure that data provided to us is legal, and compliant with all data privacy laws, including GDPR and CCPA.</li><li>We are always working to ensure our data is compliant, and update all contracts on an as-needed basis, to stay aligned with any applicable laws and regulations.</li></ul>
-                     </div>
-                  </div>
-                   
-              </div>
-           </div>
-       </section>
-   
-      <!--image text section-->
-       <section class="image-text-section py-4 py-md-5 bg-clr">
-           <div class="container">
-              <div class="row align-items-center">
-                <!--1-->
-                  <div class="col-md-12">
-                     <div class="sales-team-text text-center text-white px-2 px-md-0">
-                        <h2 class="fw-bold">Publicly Available Information </h2> 
-                        <p> Our proprietary algorithm scans publicly available sources and retrieves public information with advanced tools.</p>
-                     </div>
-                  </div>
-              </div>
-           </div>
-       </section>
-       
-<!--image text section-->
-       <section class="image-text-section py-4 py-md-5">
-           <div class="container">
-              <div class="row align-items-center">
-                  <div class="col-md-6">
-                     <div class="sales-team-text px-2 px-md-0">
-                        <h2 class="fw-bold">Lusha’s Insight and Analysis System </h2> 
-                        <p>Lusha’s advanced algorithms and proprietary machine-learning models auto-complete business information based on the data in Lusha’s database, and other information found in public sources.
-                            For example, Lusha completes email addresses based on standard corporate email patterns.Lusha’s big data technology identifies the most up-to-date information for each Business Card and simultaneously removes any outdated information from the system.Lusha ensures that all data collection and processing is conducted in accordance with all applicable privacy laws, by providing individuals with greater control over their data and notice if required by any applicable law.Lusha Systems Inc. is registered as an official data broker at the California Data Broker Registry.</p>
-                     </div>
-                  </div>
-                    <div class="col-md-6">
-                     <div class="sales-team-image">
-                         <img src="{{url('public/assets/images/source-3.jpg')}}" alt="Image"/ class="img-fluid">
-                     </div>
-                  </div>
-              </div>
-           </div>
-       </section>
-   
-  
-
+      </div>
+   </div>
+</section>
+<section class="tabbing">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-3">
+            <div class="sidebar">
+               <button class="sidebarBtn selected" onclick=(switchTabs("one")) id="oneBtn">
+               Data Contribution
+               </button>
+               <button class="sidebarBtn" onclick=(switchTabs("two")) id="twoBtn">
+               Insight and Analysis System
+               </button>
+               <button class="sidebarBtn" onclick=(switchTabs("three")) id="threeBtn">
+               Third Parties
+               </button>
+               <button class="sidebarBtn" onclick=(switchTabs("four")) id="fourBtn">
+               Information Available to Public
+               </button>
+            </div>
+         </div>
+         <div class="col-md-9">
+            <div class="content">
+               <div id="one" class="tab">
+                  <p>Information sources we use:</p>
+                  <h3>Data Contribution</h3>
+                  <p>Members of our community who have agreed to give their contact information as part of our community initiative. Community members are people who volunteer to offer data from their own social business network to our community.</p>
+                  <p>We get contact information from our affiliates' end users, such as;</p>
+                  <ul><li>Subsidiaries</li><li>Parent companies</li><li>and other corporate entities. </li></ul>
+               </div>
+               <div id="two" class="tab">
+                   <h3>Insight and Analysis System</h3>
+                   <p>Its powerful algorithms and unique machine-learning models auto-complete company information based on data in its database and other publicly available information.</p>
+                   <p>It completes email addresses, for example, based on conventional business email patterns. Its big data technology discovers the most up-to-date information for each Business card and eliminates any old information from the system at the same time.</p>
+               </div>
+               <div id="three" class="tab">
+                   <h3>Third Parties</h3>
+                   <p>We obtain information from business partners who hold well-known and trustworthy directories. To collect data from public records, publicly available information, and company directories.</p>
+                   <p>We examine each vendor's security as well as the security of the data transfer. Our data is dedicated to and in line with the GDPR and CCPA legislation. We are always striving to guarantee that our data is compliant, and we update all contracts on an as-needed basis to ensure that we are in compliance with all current laws and regulations.</p>
+               </div>
+               <div id="four" class="tab">
+                   <h3>Publicly Available Information</h3>
+                   <p>With powerful technologies, our unique system examines publicly available sources and extracts publicly available information.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
 @endsection
+<script>
+   // function to handle the switich
+   function switchTabs(id) {
+   // get all the tabs
+   let tabs = document.querySelectorAll(".tab")
+   // get all the tab buttons
+   let tabBtns = document.querySelectorAll('.sidebarBtn');
+   // loop through the tabs, hiding all of them
+   tabs.forEach(tab => {
+   tab.style.display = 'none';
+   });
+   // loop through the tabs, and remove the '.selected' class
+   tabBtns.forEach(tabBtn => {
+   tabBtn.classList.remove('selected');
+   });
+   // show the desired tab
+   document.getElementById(id).style.display = 'block';
+   // add the 'selected' class to the corresponding btn
+   document.getElementById(id + 'Btn').classList.add('selected');
+   }
+</script>

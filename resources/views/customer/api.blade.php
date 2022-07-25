@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.after-login-master')
 
 @section('content')
 
@@ -23,8 +23,8 @@
                 <div class="text-center p-0">
                   <div class="container bg-yellow p-4 p-md-5">
                     <div class="">
-                         <h3 class="fw-bold">Enrich any system with Lusha’s B2B data</h3>
-                        <p class="m-0">Lusha’s API makes it easy to automatically update any database, system or app with accurate B2B contact and company data.
+                         <h3 class="fw-bold">Enrich any system with EmailFinder’s B2B data</h3>
+                        <p class="m-0">EmailFinder’s API makes it easy to automatically update any database, system or app with accurate B2B contact and company data.
                          Set up your API to enrich and regularly update the data to ensure that it stays relevant. </p>
                     </div>
                   </div>

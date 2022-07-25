@@ -39,6 +39,7 @@ class LoginController extends Controller
 
     //show admin page
     public function index(){
+      
         $view =  view('auth/login');
         return $view;
     }
@@ -60,7 +61,7 @@ class LoginController extends Controller
              */
             $user = Auth::user();
             if ($user) {
-                return redirect('/'); 
+                return redirect('/dashboard'); 
             }
         } else {
             return back()->with('unsuccess','These credentials do not match our records.!');

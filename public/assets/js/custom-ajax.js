@@ -70,7 +70,7 @@
                 $('#editModal').find('input').val('');
                 $('.update_student').text('Update');
                 $('#editModal').modal('hide');
-                location.replace(base_url+ "/list");
+                location.replace(base_url+ "/contact-lists");
             }
         }
     });
@@ -162,3 +162,4 @@ $(document).ready(function () {
 
 });
 // end payment method
+

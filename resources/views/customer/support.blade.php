@@ -1,12 +1,19 @@
-@extends('layouts.master')
+@extends('layouts.after-login-master')
 
 @section('content')
 
-<section class="app  py-5"> 
+
+<section class="app"> 
+ <div class="container-fluid">
+     <div class="row">
+         <div class="col-md-2 side-content shadow">
+            @include('layouts.sidebar')
+        </div>
+          <div class="col-md-9">
  <div class="container-fluid">
      <div class="row">
           <div class="col-md-6 mx-auto">
-             <div class="help-center-content">
+             <div class="help-center-content py-md-5">
                  <div class="banner-text text-center pb-4">
                      <h2 class=" fw-bold">Advice and answers from the Lusha Team</h2>
                  </div>
@@ -90,7 +97,12 @@
             </div>
         </div>
      </div>
-</section>
+
+ </div>
+        </div>
+     </div>
+     </section>
+
 
 
 

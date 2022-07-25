@@ -1,3 +1,6 @@
+#company_list2_paginate,#company_list2_info,#company_list3_paginate,#company_list3_info{
+    display:none;
+}
 .main-clr{
     color:#226cf3;
 }
@@ -267,11 +270,21 @@ div#activestatus {
     text-decoration: none;
 }
 .btn.pros-btn {
-    border: 1px solid #226cf3;
+
     padding: 2px 10px;
     font-weight: 600;
     font-size: 15px;
-    border-radius: 0;
+  border: 1px solid rgb(236, 236, 236);
+  border-radius: 4px;
+
+}
+.company-details .btn.pros-btn {
+    font-size: 10px;
+}
+
+  .btn.pros-btn:hover{
+      background-color: rgb(246, 246, 246);
+  color: rgb(21, 20, 23);
 }
 .offcanvas-end{
     width: 500px;
@@ -281,7 +294,27 @@ div#activestatus {
   padding-right: 10px;
 }
 
+.company-details{
+  margin: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    padding: 5px;  
+}
+.recently-used-div h4 {
+    font-size: 14px;
+}
+.recently-used-div p{
+    font-size: 12px;
+}
+.company-details .add{
+    font-size: 14px;
+    color: #0655ff;
+    font-weight: 600;
+}
 
+.recently-used-div ul.active{background-color: rgb(246, 246, 246);
+    color: rgb(21, 20, 23);
+    
+    }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 
@@ -433,6 +466,15 @@ div#activestatus {
   cursor: pointer;
   width: 150px;
   opacity: 0;
+}
+
+.header-search-bar{
+    background:#fff!important;
+    border-radius: 4px;
+}
+
+.header-search-bar .icon i{
+    color:#000!important;
 }
 @media only screen and (max-width:767px){
 .tab-content-blk .account {

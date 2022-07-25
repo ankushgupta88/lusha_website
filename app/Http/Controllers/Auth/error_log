@@ -1,0 +1,8 @@
+[01-Jun-2022 20:25:53 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/care2020sort/public_html/lusha/app/Http/Controllers/Auth/RegisterController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/care2020sort/public_html/lusha/app/Http/Controllers/Auth/RegisterController.php on line 13
+[22-Jul-2022 02:20:40 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/care2020sort/public_html/lusha/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/care2020sort/public_html/lusha/app/Http/Controllers/Auth/VerificationController.php on line 9

@@ -1,12 +1,12 @@
     
 <div class="content-side-bar">
   <ul class="list-unstyled p-0 list-cstm mb-5"> 
-  <li class="{{ Request::is('dashboard') ? 'active' : '' }}"> <a href="{{url('/dashboard')}}"> Dashboard </a> </li>
-  <li class="{{ Request::is('prospecting') ? 'active' : '' }}"> <a href="{{url('/prospecting')}}"> Prospecting </a> </li>
-  <li class="{{ Request::is('list') ? 'active' : '' }}"> <a href="{{url('/list')}}"> Lists </a> </li>
-  <li class="{{ Request::is('team') ? 'active' : '' }}"> <a href="{{url('/team')}}"> Team </a> </li>
-  <li class="{{ Request::is('integrations') ? 'active' : '' }}"> <a href="{{url('/integrations')}}"> Integrations </a> </li>
-  <li> <a href="{{url('/api')}}"> API </a> </li>
+  <li class="{{ Request::is('dashboard') ? 'active' : '' }}"> <a href="{{url('/dashboard')}}"> <i class="fa fa-tachometer" aria-hidden="true"></i>Dashboard </a> </li>
+  <li class="{{ Request::is('prospecting') ? 'active' : '' }}"> <a href="{{url('/prospecting')}}"> <i class="fa fa-yelp" aria-hidden="true"></i>Prospecting </a> </li>
+  <li class="{{ Request::is('contact-lists') ? 'active' : '' }}"> <a href="{{url('/contact-lists')}}"><i class="fa fa-list-ul" aria-hidden="true"></i> Lists </a> </li>
+  <li class="{{ Request::is('team') ? 'active' : '' }}"> <a href="{{url('/team')}}"><i class="fa fa-users" aria-hidden="true"></i> Team </a> </li>
+  <li class="{{ Request::is('integrations') ? 'active' : '' }}"> <a href="{{url('/integrations')}}"><i class="fa fa-superpowers" aria-hidden="true"></i> Integrations </a> </li>
+  <li class="{{ Request::is('api') ? 'active' : '' }}"> <a href="{{url('/api')}}"><i class="fa fa-bolt" aria-hidden="true"></i> API </a> </li>
   </ul>
 
   @php

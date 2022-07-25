@@ -1,3 +1,7 @@
+.blog-profile-image .img-fluid {
+	max-width: 25%;
+}
+
 .unsuccess-msg{
     color: red !important;
 }

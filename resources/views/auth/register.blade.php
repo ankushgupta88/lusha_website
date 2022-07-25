@@ -2,15 +2,15 @@
 
 @section('content')
 
-<section class="regester-form py-5">
+<section class="regester-form">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-7 col-md-10 col-12">
           <div class="shadow p-4">
             <div class="card border-0">
-                <div class="main-title text-center card-header border-0">
-                     <h2 class="main-title-text fw-bold"> {{ __('Register') }} </h2>
-                 </div>
+              
+                     <h2 class="main-title-text fw-bold text-center"> {{ __('Register') }} </h2>
+               
                  
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" class="mb-0">
@@ -117,9 +117,11 @@
 
                         <div class="row mb-0">
                             <div class="col-md-12 text-center mt-4">
-                                <button type="submit" class="btn main-btn">
+                                <div class="post_comment">
+                                <button type="submit" class="">
                                     {{ __('Register') }}
                                 </button>
+                                </div>
                             </div>
                         </div>
                     </form>

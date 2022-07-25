@@ -16,7 +16,8 @@
         "omnipay/stripe": "^3.1",
         "paypal/rest-api-sdk-php": "^1.14",
         "srmklive/paypal": "~1.0",
-        "stripe/stripe-php": "^7.108"
+        "stripe/stripe-php": "^7.108",
+        "vonage/client": "^3.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

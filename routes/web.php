@@ -14,10 +14,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('home');
 });
-
+    Route::get('/new-homepage','New_pagescontroller@index');
+    Route::get('/blog','PagesController@blog');
+    Route::get('/blog-detail/{id}','PagesController@BlogDetail');
+    Route::post('/add-comment','PagesController@AddComment');
+    Route::post('/blog-search','PagesController@BlogSearch');
+    Route::any('/category-search/{id}','PagesController@CategorySearch');
 Auth::routes();
+// Plugin Extension path
+Route::get('/plugin_extension', 'pluginextension@index');
+// end plugin route
+// search_filter route search_filter
+Route::get('/search-company-list', 'search_filter@index');
+
+
+// end search filter code here
 
 Route::get('admin-login','LoginController@index');  
 Route::post('/login-submit', 'LoginController@dologin')->name('login.submit');
@@ -28,8 +41,15 @@ Route::get('/plans','CustomerController@plans');
 Route::get('/enterprise','PagesController@enterprise');
 Route::get('/customers','PagesController@customers');
 Route::get('/about','PagesController@about');
+Route::get('/contact','PagesController@contact');
+Route::post('/contact-us','PagesController@contactfrom');
+//Route::get('/price','CustomerController@price');
+Route::get('/search','CustomerController@headersearch');
+
+
 // career post job
 Route::get('/careers','PagesController@career');
+Route::get('/careers1','PagesController@career1');
 Route::get('/careers-job/{id}','PagesController@career_job');
 Route::post('/apply-career','PagesController@apply_career_job')->name('career.job');
 // end career 
@@ -47,6 +67,14 @@ Route::get('/privacy-policy','PagesController@privacy_policy');
 Route::get('/help-support','PagesController@help_support');
 Route::get('/api-documents','PagesController@api_documents');
 Route::get('/privacy-center','PagesController@privacy_center');
+/// New website Link
+Route::get('/our-sales','PagesController@oursales');
+Route::get('/marketing','PagesController@marketDetail');
+Route::get('/recruiters','PagesController@recruiters');
+
+
+
+////////
 
 Route::get('/blogs','BlogController@all_blog');
 Route::get('/single-blogs/{id}','BlogController@single_blog');
@@ -60,7 +88,11 @@ Route::group(['middleware' => 'auth'], function(){
     //Admin Access Only
 Route::group(['middleware' => 'admin'], function(){
     Route::get('/admin/dashboard','Admin\DashboardController@index');
-    Route::post('/admin-logout', 'Admin\DashboardController@logout')->name('admin.logout');
+    Route::get('/admin/admin-profile', 'Admin\AdminController@admin_profile');
+    Route::put('/admin/admin-account-update/{id}', 'Admin\AdminController@account_update');
+    Route::get('admin/change-password','Admin\AdminController@changePassword');
+    Route::post('admin/submit-change-password','Admin\AdminController@submitChangePassword')->name('admin.submit.ChangePassword');
+    Route::any('/admin-logout', 'Admin\DashboardController@logout')->name('admin.logout');
     Route::get('/admin/api/add-api', 'Admin\AdminController@add_api');
     Route::get('/admin/api/all-api', 'Admin\AdminController@all_api');
     Route::get('/admin/list/all-list', 'Admin\ListController@all_list');
@@ -74,8 +106,17 @@ Route::group(['middleware' => 'admin'], function(){
     Route::put('admin/update-plan/{id}','Admin\PlanController@update_plan')->name('plan.update');
     Route::get('admin/plan-delete/{id}','Admin\PlanController@plan_destroy'); 
     Route::get('/admin/prospecting/all-prospecting', 'Admin\AdminController@all_prospecting');
+    
+    Route::get('admin/prospecting/edit-prospecting/{id}','Admin\AdminController@editprospecting')->name('edit.prospecting'); 
+     Route::any('admin/prospecting/update-prospecting/{id}','Admin\AdminController@updateprospecting')->name('update.prospecting'); 
+        Route::get('admin/prospecting/delete-prospecting/{id}','Admin\AdminController@deleteprospecting')->name('delete.prospecting');
+    
     Route::get('/admin/contactSale/all-contact-sale', 'ContactSaleController@all_contact_sale');
     Route::post('admin/contactSale/activate/{id}','ContactSaleController@contact_activate');
+    // orders
+    Route::get('admin/order/all-order','Admin\OrderController@all_order');
+    Route::get('admin/invoice-receipt/{id}','Admin\OrderController@order_receipt')->name('invoice.receipt');
+    // end order
 
      // blog route
     Route::get('admin/blog/add-blog','BlogController@add_blog');
@@ -101,13 +142,30 @@ Route::group(['middleware' => 'admin'], function(){
     Route::get('admin/career-list','CareerController@career_list');
     Route::get('admin/career-user-delete/{id}','CareerController@career_user_delete');
     // end career pages
+    
+        // Professional Ling 
+    Route::get('admin/professional/professional-list','Admin\ProfessionalController@index');
+    Route::get('admin/professional/professional-add','Admin\ProfessionalController@create');
+    Route::post('admin/professional/professional-store','Admin\ProfessionalController@store')->name('professional.store');
+    Route::get('admin/professional/professional-edit/{id}','Admin\ProfessionalController@edit')->name('edit.professional');
+    Route::any('admin/professional/professional-update/{id}','Admin\ProfessionalController@update')->name('update.professional');
+    Route::get('admin/professional/professional-delete/{id}','Admin\ProfessionalController@delete');
 });
+
 
  //Customer Access Only
 Route::group(['middleware' => 'customer'], function(){
     Route::get('/dashboard','CustomerController@dashboard');
-    Route::get('/prospecting','CustomerController@prospecting');
-    Route::get('/list','CustomerController@list');
+    Route::get('/dashboard-insight/{id}','CustomerController@dashboard_insight');
+    Route::any('/prospecting','CustomerController@prospecting');
+    Route::any('/contact-lists','CustomerController@list');
+    
+    // Prospeting new page created 13-04-22
+    Route::get('/prospecting-new','New_prospeting@index');
+    
+    // All List Shoew By Name
+    //Route::get('/all/contacts','CustomerController@all_contacts');
+
     Route::get('/team','CustomerController@team');
     Route::get('/integrations','CustomerController@integrations');
     Route::get('/api','CustomerController@api');
@@ -124,15 +182,31 @@ Route::group(['middleware' => 'customer'], function(){
     Route::get('/account-reset-password/{id}','CustomerController@account_reset_password');
     Route::get('/support','CustomerController@support');
     Route::get('/join-community','CustomerController@join_community');
-    Route::get('/prospecting-filter/{id}','ProspectingFilterController@prospecting_filter');
+    //Route::get('/prospecting-filter/{id}','ProspectingFilterController@prospecting_filter');
     Route::post('/add-prospecting','ProspectingFilterController@add_prospecting');
+     Route::get('/get-company-details','ProspectingFilterController@compainy_details');
+    Route::get('/prospecting-list','ProspectingFilterController@prospecting_lists');
     Route::get('/prospecting-list/{id}','ProspectingFilterController@prospecting_list');
+    Route::get('/search-single-company', 'ProspectingFilterController@search_filter');
+     Route::get('/contact-name', 'ProspectingFilterController@contact_name');
+       Route::any('/saved-history', 'ProspectingFilterController@SavedHistory');
+      Route::any('/remove-save-history/{id}', 'ProspectingFilterController@RemoveSavedHistory');
+    Route::post('/rename-save-history/{id}', 'ProspectingFilterController@RenameSavedHistory');
+    Route::get('/rename-history/{id}', 'ProspectingFilterController@RemoveHistory');
+    
+    
     //  plan checkout
     Route::get('/checkout/{id}','PlanCheckoutController@checkout');
     Route::post('/payment', 'PlanCheckoutController@payStripe');
     // end plan checkout
 
 });
+
+// New pages Route here
+
+    // end new pages controller
+
+
 
 });	
 

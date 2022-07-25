@@ -24,6 +24,7 @@ class PlanCheckoutController extends Controller
 	public function payStripe(Request $request)
 	{  
 		$user_id = Auth::id();
+	
 		//Get request
         $amount = $request->input('amount');
         $name = $request->input('company_name');
@@ -41,6 +42,8 @@ class PlanCheckoutController extends Controller
 		//Check payent method here
 		if($request->payment_method == "Stripe") {
 			try {
+			   
+			    if($amount > 0){
 				$stripe = new \Stripe\StripeClient('sk_test_51K9UGESERrOeVWpndsFtRSLgXhNT8aLtSqZdDfO1xnnwLZgdkqVeNX88oyBPcJz2oknuAQ1OeJfFeIpHYlSxZBOK008nYHqIJi');
 				$token_data = $stripe->tokens->create([
 				  'card' => [
@@ -50,10 +53,11 @@ class PlanCheckoutController extends Controller
 				    'cvc' => $request->card_cvv,
 				  ],
 				]);
-
+}
 			//Check crd is valid or not
-			if($token_data){ 
+			if(!empty($token_data)|| empty($token_data) ){ 
 				//token
+				if($amount > 0){
 				$stripetoken = $token_data->id; 
 
 		        Stripe::setApiKey('sk_test_51K9UGESERrOeVWpndsFtRSLgXhNT8aLtSqZdDfO1xnnwLZgdkqVeNX88oyBPcJz2oknuAQ1OeJfFeIpHYlSxZBOK008nYHqIJi');
@@ -74,11 +78,19 @@ class PlanCheckoutController extends Controller
 		            ],
 		        ]);
 		        $result = $charge->create($cardDetailsAry);
+				}
 		        // echo "<pre>";
 		       	// print_r($result);
 		        //Check if payment is done or not
-		        if($result['status'] == "succeeded"){
-		        	$transationId = $result['id'];
+		        if(!empty($result)){
+		            
+		             $status = $result['status'];
+		        }else{
+		            $status = "succeeded";
+		        }
+		        
+		        if($status == "succeeded"){
+		        	$transationId = !empty($result['id'])?$result['id']:0;
 		        	// user plan update 
 			       $update = UserPlan::where('user_id', $user_id)
 		                			 ->update([

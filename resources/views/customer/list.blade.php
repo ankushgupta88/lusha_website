@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.after-login-master')
 
 @section('content')
 
@@ -70,7 +70,7 @@
                    </div> 
                 </div><br>
 <div id="success_message"></div>
-  <div class="table-content pt-5">
+  <div class="table-content pt-5 pb-5 pb-md-0 table-responsive">
       <table id="example" class="display pt-4 mb-4" cellspacing="0" width="100%">
         <thead>
             <tr>
@@ -79,23 +79,25 @@
                 <th>Contacts</th>
                 <th>Created By</th>
                 <th>Created Date </th>
-                <th>December 22nd, 2021</th>
+                <!--<th>December 22nd, 2021</th>-->
                 <th> </th>
             </tr>
         </thead>
 
  
         <tbody>
+           
           <tr>
                 <td> </td>
-                <td>All Contacts</td>
-                <td>5</td>
+                <td><a href="{{url('/prospecting-list')}}">All Contacts</a></td>
+                <td>{{ $list_count }}</td>
                 <td></td>
                 <td>December 22nd, 2021</td>
-                <td>December 22nd, 2021</td>
-                <td> <button class="btn app-btn-primary float-end"> Export All Contacts </button> </td>
+                <!--<td>December 22nd, 2021</td>-->
+                <td>  </td>
             
           </tr>
+          
           @foreach($list_data as $lists)
             <tr>
                 <td> </td>
@@ -111,12 +113,15 @@
                   $expire_plane = $lists->updated_at;
                   $updated_at = date('F m,Y',strtotime($expire_plane." +1 month"));
                 ?>
-                <td>{{$updated_at}}</td>
+                <!--<td>{{$updated_at}}</td>-->
                 <td>                          
                     <div class="create-list">
                         <!-- Button trigger modal -->
-                            <button type="button" value="{{$lists->id}}" class="btn btn-primary editbtn btn-sm"><i class="fa fa-edit"></i></button>
-                            <button type="button" class="btn app-btn-primary"><a href="{{url('/list-delete',$lists->id)}}"><i class="fa fa-trash-o" style="color:red"></i></a></button>
+                        <button type="button" value="{{$lists->id}}" class="btn btn-primary editbtn btn-sm" data-bs-toggle="modal" data-bs-target="#editModal">
+  <i class="fa fa-edit"></i>
+</button>
+                            <!--<button type="button" value="{{$lists->id}}" class="btn btn-primary editbtn btn-sm"><i class="fa fa-edit"></i></button>-->
+                            <button type="button" class="btn app-btn-primary"><a href="{{url('/list-delete',$lists->id)}}"><i class="fa fa-trash-o" style="color:#fff;"></i></a></button>
                    </div> 
                     
                 </td>

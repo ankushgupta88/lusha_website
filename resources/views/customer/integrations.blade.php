@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.after-login-master')
 
 @section('content')
 
@@ -255,7 +255,7 @@
                                 <img src="{{url('public/assets/images/salesforce.png')}}" alt="Image"/>
                                <h6 class="fw-bold mb-0 ps-2"> Gmail </h6> 
                            </div>
-                           <p class="pt-2 mb-0"> Join the Lusha community and help keep our database accurate and up-to-date</p>
+                           <p class="pt-2 mb-0"> Join the EmailFinder community and help keep our database accurate and up-to-date</p>
                            <a href="#" class="fs-14 main-clr"> Go to community <i class="fa fa-angle-double-right" aria-hidden="true"></i></a> <br>
                            <!-- Button trigger modal -->
                             <button type="button" class="btn app-btn-primary mt-4 w-100" data-bs-toggle="modal" data-bs-target="#connectModal">
@@ -288,7 +288,7 @@
                                 <img src="{{url('public/assets/images/salesforce.png')}}" alt="Image"/>
                                <h6 class="fw-bold mb-0 ps-2"> Outlook </h6> 
                            </div>
-                           <p class="pt-2 mb-0"> Join the Lusha community and help keep our database accurate and up-to-date</p>
+                           <p class="pt-2 mb-0"> Join the EmailFinder community and help keep our database accurate and up-to-date</p>
                            <a href="#" class="fs-14 main-clr"> Go to community <i class="fa fa-angle-double-right" aria-hidden="true"></i></a> <br>
                            <!-- Button trigger modal -->
                             <button type="button" class="btn app-btn-primary mt-4 w-100" data-bs-toggle="modal" data-bs-target="#connectModal">

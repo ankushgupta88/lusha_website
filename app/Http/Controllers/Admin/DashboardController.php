@@ -10,6 +10,7 @@ use App\Models\UserPlan;
 use App\Models\User;
 use App\Models\ContactSale;
 use App\Models\ApplyJob;
+use App\Models\Order;
 class DashboardController extends Controller
 {
     //function for admin dashboartd
@@ -18,7 +19,8 @@ class DashboardController extends Controller
         $plans[] = Plan::count();
         $contact[] = ContactSale::count();
         $apply_job[] = ApplyJob::count();
-        $view =  view('admin.dashboard',compact('users','plans','contact','apply_job'));
+        $orderlist = Order::with('order_user_list','order_user_plan_list')->orderBy('id','desc')->limit(7)->get()->toArray();
+        $view =  view('admin.dashboard',compact('users','plans','contact','apply_job','orderlist'));
         return $view;
     }
     

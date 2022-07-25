@@ -44,200 +44,65 @@
                       </th>
                   </tr>
               </thead>
+                @if(!empty($prospecting))
               <tbody>
-                  <tr>
-                      <td>
-                          1
-                      </td>
-                      <td>
-                          <a>
-                              Clive Rees Chief Procurement
-                          </a>
-                      </td>
-                      <td>
-                          @uk.fujitsu.com
-                      </td>
-                      <td>
-                          Fujitsu company-logo
-                      </td>
-                      <td class="project_progress">
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-green" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 57%">
+                    @php $i = 1; @endphp
+                      @foreach($prospecting as $key => $value)
+                      <tr>
+                          <td>
+                              {{$i}}
+                          </td>
+                          <td>
+                              <a>
+                                  {{$value['full_name']}}
+                                 
+                              </a>
+                          </td>
+                          <td>
+                              {{$value['mobile_phone']}}
+                          </td>
+                          <td>
+                             {{$value['job_company_name']}}
+                          </td>
+                          <td class="project_progress">
+                              <div class="progress progress-sm">
+                                  <div class="progress-bar bg-green" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 57%">
+                                  </div>
                               </div>
-                          </div>
-                          <small>
-                              57% Complete
-                          </small>
-                      </td>
-                      <td class="project-state">
-                          <span class="badge badge-success">Success</span>
-                      </td>
-                      <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
-                              </i>
-                              View
-                          </a>
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                  </tr>
-                  <!--2-->
-                  <tr>
-                      <td>
-                          1
-                      </td>
-                      <td>
-                          <a>
-                              Clive Rees Chief Procurement
-                          </a>
-                      </td>
-                      <td>
-                      @uk.fujitsu.com
-                      </td>
-                      <td>
-                          Fujitsu company-logo
-                          
-                      </td>
-                      <td class="project_progress">
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-green" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 57%">
-                              </div>
-                          </div>
-                          <small>
-                              57% Complete
-                          </small>
-                      </td>
-                      <td class="project-state">
-                          <span class="badge badge-success">Success</span>
-                      </td>
-                      <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
-                              </i>
-                              View
-                          </a>
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                  </tr>
-                  <!--3-->
-                   <tr>
-                      <td>
-                          1
-                      </td>
-                      <td>
-                          <a>
-                              Clive Rees Chief Procurement
-                          </a>
-                      </td>
-                      <td>
-                        @uk.fujitsu.com
-                      </td>
-                      <td>
-                          Fujitsu company-logo
-                          
-                      </td>
-                      <td class="project_progress">
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-green" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 57%">
-                              </div>
-                          </div>
-                          <small>
-                              57% Complete
-                          </small>
-                      </td>
-                      <td class="project-state">
-                          <span class="badge badge-success">Success</span>
-                      </td>
-                      <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
-                              </i>
-                              View
-                          </a>
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                  </tr>
-             <!--4-->
-                   <tr>
-                      <td>
-                          1
-                      </td>
-                      <td>
-                          <a>
-                              Clive Rees Chief Procurement
-                          </a>
-                      </td>
-                      <td>
-                        @uk.fujitsu.com
-                      </td>
-                      <td>
-                          Fujitsu company-logo
-                          
-                      </td>
-                      <td class="project_progress">
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-green" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 57%">
-                              </div>
-                          </div>
-                          <small>
-                              57% Complete
-                          </small>
-                      </td>
-                      <td class="project-state">
-                          <span class="badge badge-success">Success</span>
-                      </td>
-                      <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
-                              </i>
-                              View
-                          </a>
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                  </tr>
-                  
-                   
-                  
-                  
-                  
-            
+                              <small>
+                                  57% Complete
+                              </small>
+                          </td>
+                          <td class="project-state">
+                              @if($value['status'] == 1)
+                              <span class="badge badge-success">Success</span>
+                              @else
+                              <span class="badge badge-warning">Pending</span>
+                              @endif
+                          </td>
+                          <td class="project-actions text-right">
+                              <!--<a class="btn btn-primary btn-sm" href="{{url('admin/prospecting/edit-prospecting',$value['id'])}}">-->
+                              <!--    <i class="fas fa-folder">-->
+                              <!--    </i>-->
+                              <!--    View-->
+                              <!--</a>-->
+                              <a class="btn btn-info btn-sm" href="{{url('admin/prospecting/edit-prospecting',$value['id'])}}">
+                                  <i class="fas fa-pencil-alt">
+                                  </i>
+                                  Edit
+                              </a>
+                              <a class="btn btn-danger btn-sm" href="{{url('admin/prospecting/delete-prospecting',$value['id'])}}">
+                                  <i class="fas fa-trash">
+                                  </i>
+                                  Delete
+                              </a>
+                          </td>
+                      </tr>
+                       @php $i++; @endphp
+                      @endforeach
+ 
               </tbody>
+                  @endif
           </table>
         </div>
               

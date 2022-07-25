@@ -1,0 +1,4 @@
+[03-Jul-2022 18:59:06 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/care2020sort/public_html/lusha/database/migrations/2019_08_19_000000_create_failed_jobs_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/care2020sort/public_html/lusha/database/migrations/2019_08_19_000000_create_failed_jobs_table.php on line 7
